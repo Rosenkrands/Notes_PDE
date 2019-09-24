@@ -1,1 +1,37 @@
 # Exercise 1.8
+The equation to solve is the following
+\begin{align}
+  u(x) \partial_1 u(x) + \partial_2 u(x) = 1, 
+  \qquad x \in \mathbb{R}^2, 
+  \ u(q,q) = 0, \ q \in \mathbb{R} 
+\end{align}
+with
+\begin{align}
+  \Sigma = \left\{ (q,q) \ | \ q \in \mathbb{R} \right\}
+\end{align}
+ 
+## Transform to normal form
+The normal form is given by  
+\begin{align}
+  u'(x) A(x) + b(x) u(x) = f(x), \qquad x \in \Omega
+  (\#eq:normal)
+\end{align}
+were $u'(x)$ is given by
+\begin{align}
+  u'(x) = \left[ \partial_1 u(x) \ \ldots \ \partial_d u(x) \right]
+\end{align}
+We can write our equation as
+\begin{align}
+  \left[ \partial_1 u(x) \ \partial_2 u(x) \right] 
+  \begin{bmatrix}
+    u(x) \\
+    1
+  \end{bmatrix}
+  = 1
+\end{align}
+i.e. our $A(x)$ and $b(x)$ becomes
+\begin{align}
+  A(x) = \begin{bmatrix} u(x) \\ 1 \end{bmatrix}, \qquad
+  b(x) = 1
+\end{align}
+which in turn gives
