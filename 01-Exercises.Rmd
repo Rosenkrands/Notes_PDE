@@ -34,4 +34,4 @@ i.e. our $A(x)$ and $b(x)$ becomes
   A(x) = \begin{bmatrix} u(x) \\ 1 \end{bmatrix}, \qquad
   b(x) = 1
 \end{align}
-which in turn gives
+which in turn gives us that
