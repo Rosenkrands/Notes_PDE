@@ -1,0 +1,15 @@
+---
+  title: "Partial Differential Equation Notes"
+author: "Kasper Rosenkrands"
+date: "24.09.2019"
+output: bookdown::gitbook
+site: bookdown::bookdown_site
+---
+  
+  ```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Introduction {-}
+
+This book will include notes and exercises from the Partial Differential Equations course at Aalborg University.
