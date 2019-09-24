@@ -35,3 +35,5 @@ i.e. our $A(x)$ and $b(x)$ becomes
   b(x) = 1
 \end{align}
 which in turn gives us that
+\begin{align}
+\end{align}
