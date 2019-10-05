@@ -1,5 +1,10 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 # Exercise 1.8
-The equation to solve is the following
+The exercise is to solve the following Cauchy-problem
 \begin{align}
   u(x) \partial_1 u(x) + \partial_2 u(x) = 1, 
   \qquad x \in \mathbb{R}^2, 
@@ -34,6 +39,58 @@ i.e. our $A(x)$ and $b(x)$ becomes
   A(x) = \begin{bmatrix} u(x) \\ 1 \end{bmatrix}, \qquad
   b(x) = 1
 \end{align}
-which in turn gives us that
+which in turn gives us that \@ref(eq:normal) becomes
 \begin{align}
+  \nabla u(x) A(x,z) = 1
+\end{align}
+
+## Parameterizing the hypersurface
+The initial hypersurface $\Sigma$ by the following
+$$\gamma(q) := \begin{bmatrix} q \\ q \end{bmatrix}, \qquad q \in \mathbb{R}.$$
+Taking the derivative of the parameterization yields
+$$\gamma'(q) = \begin{bmatrix} 1 \\ 1 \end{bmatrix}.$$
+The tangent space of $\Sigma$ becomes
+$$T_{\gamma(q)}\Sigma = \left\{ \begin{bmatrix} s \\ s \end{bmatrix} \Big| \ s \in \mathbb{R}\right\}.$$
+The condition that $A\Big(\gamma(q), \phi(\gamma(q))\Big) \in T_{\gamma(q)}\Sigma$ is always satisfied as $A\Big(\gamma(q), \phi(\gamma(q))\Big)$ is given by the following
+$$A\Big(\gamma(q), \phi(\gamma(q))\Big) = \begin{bmatrix} 0 \\ 1\end{bmatrix}.$$
+The Cauchy problem is non-characteristic in everything point contained in $\Sigma$.
+
+## System of equations
+We get the following system of equations
+\begin{align}
+  \partial_t x_1(t,q) &= Z(t,q) \quad&&, \ x_1(0,q) = q (\#eq:system1) \\
+  \partial_t x_2(t,q) &= 1 \quad&&, \ x_2(0,q) = q (\#eq:system2) \\
+  \partial_t Z(t,q) &= 1 \quad&&, \ Z(0,q) = 0 (\#eq:system3)
+\end{align}
+From \@ref(eq:system3) we quickly see that 
+\begin{align} 
+  Z(t,q) = t. (\#eq:bigz)
+\end{align}
+From \@ref(eq:system2) we coclude that
+$$x_2(t,q) = q + t.$$
+Considering \@ref(eq:system1) and \@ref(eq:bigz) we see that
+\begin{align}
+  x_1(t,q) &= q + \int_0^t s \ ds \\
+  &= q + \frac{1}{2} t^2.
+\end{align}
+
+## Finding t and q
+We will start by finding $t$, we have the following expressions
+$$x_1 = q + \frac{1}{2} t^2, \qquad x_2 = q + t.$$
+We can start by isolating $q$ is the second equation
+$$q = x_2 - t,$$
+inserting this in the first equation gives the following
+\begin{align}
+  x_1 &= q + \frac{1}{2} t^2 \\
+  &= x_2 - t + \frac{1}{2} t^2 (\#eq:x1expression)
+\end{align}
+Rewriting \@ref(eq:x1expression) gives
+\begin{align}
+  x_1 - x_2 + \frac{1}{2} = \frac{1}{2}\underbrace{\left(t^2 - 2t + 1\right)}_{(t - 1)^2}(\#eq:texpression)
+\end{align}
+Multiplying both sides of \@ref(eq:texpression) by $2$ gives
+\begin{align}
+  (t - 1)^2 &= 2x_1 - 2x_2 + 1 \\
+  t - 1 &= \pm\sqrt{2x_1 - 2x_2 + 1} \\
+  t &= 1 \pm\sqrt{2x_1 - 2x_2 + 1} (\#eq:psi1)
 \end{align}
