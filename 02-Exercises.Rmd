@@ -34,7 +34,7 @@ This is done as follows
 \begin{align*}
   \tilde{f}(x) =
   \begin{cases}
-    f(x), &x\in[0, \pi] \\
+    f(x), &x\in[0, \pi] \\[2ex]
     -f(-x), &x\in[-\pi, 0).
   \end{cases}
 \end{align*}
@@ -44,6 +44,17 @@ Remark C.4 now tells that because $\tilde{f}$ is uneven $a_n(\tilde{f}) = 0$ for
 \end{align*}
 With our uneven expansion of $f$ our $b_n(\tilde{f})$ becomes
 \begin{align*}
-  b_n(\tilde{f}) &= \frac{2}{\pi} \int_0^\pi \sin(n\pi x/\pi) \tilde{f}(x) \text{d}x \\
-  
+  b_n(\tilde{f}) &= \frac{2}{\pi} \int_0^\pi \sin(n\pi x/\pi) \tilde{f}(x) \ \text{d}x \\
+  &= \frac{2}{\pi} \left( \int_0^p \sin(nx)\frac{hx}{p} \ \text{d}x + \int_p^\pi \sin(nx)\frac{h(\pi - x)}{\pi - p} \ \text{d}x \right) \\
+  &= \frac{2}{\pi} \left( \frac{h}{p} \int_0^p \sin(nx) x \ \text{d}x + \frac{h}{\pi - p} \int_p^\pi \sin(nx)(\pi - x) \ \text{d}x \right) \\
+  &= \frac{2}{\pi} \left( \frac{h}{p} \int_0^p \sin(nx) x \ \text{d}x + \frac{h\pi}{\pi - p} \int_p^\pi \sin(nx) \ \text{d}x - \frac{h}{\pi - p} \int_p^\pi \sin(nx)x \ \text{d}x \right).
+\end{align*}
+To compute the integrals in the above equation we use partial integration with
+\begin{align*}
+  f(x) &= x, \qquad &&f'(x) = 1 \\
+  g(x) &= sin(nx), \qquad &&G(x) = -\frac{\cos(nx)}{n},
+\end{align*}
+and the familiar relation
+\begin{align*}
+  \int_a^b f(x)g(x) = \left[ f(x)g(x) \right]_a^b + \int_a^b f'(x)G(x) \ \text{d}x
 \end{align*}
