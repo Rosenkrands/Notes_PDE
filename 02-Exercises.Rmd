@@ -52,9 +52,26 @@ With our uneven expansion of $f$ our $b_n(\tilde{f})$ becomes
 To compute the integrals in the above equation we use partial integration with
 \begin{align*}
   f(x) &= x, \qquad &&f'(x) = 1 \\
-  g(x) &= sin(nx), \qquad &&G(x) = -\frac{\cos(nx)}{n},
+  g(x) &= \sin(nx), \qquad &&G(x) = -\frac{\cos(nx)}{n},
 \end{align*}
 and the familiar relation
 \begin{align*}
-  \int_a^b f(x)g(x) = \left[ f(x)g(x) \right]_a^b + \int_a^b f'(x)G(x) \ \text{d}x.
+  \int_a^b f(x)g(x) = \left[ f(x)G(x) \right]_a^b + \int_a^b f'(x)G(x) \ \text{d}x.
+\end{align*}
+This means that the first integral becomes
+\begin{align*}
+  \int_0^p\sin(nx) x \ \text{d}x &= \left[ -\frac{x\cos(nx)}{n} \right]_0^p - \frac{1}{n} \int_0^p \cos(nx) \ \text{d}x \\
+  &= \left[ -\frac{x\cos(nx)}{n} \right]_0^p - \frac{1}{n} \left[ \frac{\sin(nx)}{n} \right]_0^p \\
+  &= \left( -\frac{p\cos(np)}{n} - \left[ -\frac{0 \cdot \cos(n \cdot 0)}{n} \right] \right) - \frac{1}{n}\left( \frac{\sin(np)}{n} - \frac{\sin(n \cdot 0)}{n} \right) \\
+  &= -\frac{p\cos(np)}{n} - \frac{\sin(np)}{n^2}.
+\end{align*}
+The second integral becomes
+\begin{align*}
+  \int_p^\pi \sin(nx) \ \text{d}x &= \left[ -\frac{\cos(nx)}{n} \right]_p^\pi \\
+  &= -\frac{\cos(n \pi)}{n} - \left( -\frac{\cos(np)}{n} \right) \\
+  &= \frac{1}{n} + \frac{\cos(np)}{n}.
+\end{align*}
+Lastly the third integral becomes
+\begin{align*}
+  
 \end{align*}
