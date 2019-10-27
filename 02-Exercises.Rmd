@@ -81,5 +81,10 @@ Lastly the third integral becomes
 Inserting the three integrals, which we have now solved, yields
 \begin{align*}
   b_n(\tilde{f}) &= \frac{2}{\pi} \left( \frac{h}{p} \int_0^p \sin(nx) x \ \text{d}x + \frac{h\pi}{\pi - p} \int_p^\pi \sin(nx) \ \text{d}x - \frac{h}{\pi - p} \int_p^\pi \sin(nx)x \ \text{d}x \right) \\
-  &= \frac{2}{\pi} \left( \frac{h}{p} \left( -\frac{p\cos(np)}{n} - \frac{\sin(np)}{n^2} \right) + \frac{h\pi}{\pi - p} \left( \frac{1}{n} + \frac{\cos(np)}{n} \right) - \frac{h}{\pi - p} \left( \frac{\pi}{n} + \frac{p\cos(np)}{n} + \frac{\sin(np)}{n^2} \right) \right)
+  &= \frac{2}{\pi} \left( \frac{h}{p} \left( -\frac{p\cos(np)}{n} - \frac{\sin(np)}{n^2} \right) + \frac{h\pi}{\pi - p} \left( \frac{1}{n} + \frac{\cos(np)}{n} \right) - \frac{h}{\pi - p} \left( \frac{\pi}{n} + \frac{p\cos(np)}{n} + \frac{\sin(np)}{n^2} \right) \right) \\
+  &= \frac{2}{\pi} \left(-\frac{hp\cos(np)}{pn} - \frac{h\sin(np)}{pn^2} + \frac{h\pi\cos(np)}{n(\pi - p)} - \frac{hp\cos(np)}{n(\pi - p)} - \frac{h\sin(np)}{n^2(\pi - p)} \right) \\
+  &= -\frac{2hp\cos(np)}{\pi pn} - \frac{2h\sin(np)}{\pi pn^2} + \frac{2h\pi\cos(np)}{\pi n(\pi - p)} - \frac{2hp\cos(np)}{\pi n(\pi - p)} - \frac{2h\sin(np)}{\pi n^2(\pi - p)} \\
+  &= -\frac{2h\cos(np)}{\pi n} - \frac{2h\sin(np)}{\pi pn^2} + \frac{2h\cos(np)}{n(\pi - p)} - \frac{2hp\cos(np)}{\pi n(\pi - p)} - \frac{2h\sin(np)}{\pi n^2(\pi - p)} \\
+  &= 2h\left( -\frac{\cos(np)}{\pi n} - \frac{\sin(np)}{\pi pn^2} + \frac{\cos(np)}{n(\pi - p)} - \frac{p\cos(np)}{\pi n(\pi - p)} - \frac{\sin(np)}{\pi n^2(\pi - p)} \right) \\
+  &= \frac{2h}{n}\left( -\frac{\cos(np)}{\pi} - \frac{\sin(np)}{\pi p n} + \frac{\cos(np)}{\pi - p} - \frac{p\cos(np)}{\pi(\pi - p)} - \frac{\sin(np)}{\pi n(\pi - p)} \right) \\
 \end{align*}
