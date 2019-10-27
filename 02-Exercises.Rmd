@@ -1,0 +1,49 @@
+---
+output:
+  html_document: default
+  pdf_document: default
+---
+# Fourier Series
+
+## Exercise C.1
+
+Let $p \in (0, \pi), \ h \in \mathbb{R}$ and define
+\begin{align*}
+  f(x) = 
+  \begin{cases}
+    \dfrac{hx}{p}, &x\in[0,p], \\[2ex]
+    \dfrac{h(\pi - x)}{\pi - p}, &x\in(p, \pi].
+  \end{cases}
+\end{align*}
+Show that
+\begin{align*}
+  f(x) = \sum_{n = 1}^\infty A_n \sin(nx), \quad x\in[o, \pi],
+\end{align*}
+where
+\begin{align*}
+  A_n := \frac{2h}{n^2} \frac{\sin(np)}{p(\pi - p)}, \quad n \in \mathbb{N}.
+\end{align*}
+Convince yourself that $\sum_{n = 1}^\infty |A_n| < \infty$ such that one can utilize theorem C.8.
+\newline
+\texit{Hint:} You can safe time by expanding $f$ as an uneven function on $[-\pi, \pi]$ and use remark C.4.
+\newline
+\textbf{Solution:}
+\newline
+The first thing to do is to expand $f$ as an uneven function.
+This is done as follows
+\begin{align*}
+  \tilde{f}(x) =
+  \begin{cases}
+    f(x), &x\in[0, \pi] \\
+    -f(-x), &x\in[-\pi, 0).
+  \end{cases}
+\end{align*}
+Remark C.4 now tells that because $\tilde{f}$ is uneven $a_n(\tilde{f}) = 0$ for all $n\in\mathbb{N}_0$ and
+\begin{align*}
+  b_n(\tilde{f}) = \frac{2}{l} \int_0^l \sin(n \pi x/l)\tilde{f}(x)\text{d}x, \quad n \in \mathbb{N}.
+\end{align*}
+With our uneven expansion of $f$ our $b_n(\tilde{f})$ becomes
+\begin{align*}
+  b_n(\tilde{f}) &= \frac{2}{\pi} \int_0^\pi \sin(n\pi x/\pi) \tilde{f}(x) \text{d}x \\
+  
+\end{align*}
