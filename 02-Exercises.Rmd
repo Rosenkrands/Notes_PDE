@@ -62,7 +62,7 @@ This means that the first integral becomes
 \begin{align*}
   \int_0^p\sin(nx) x \ \text{d}x &= \left[ -\frac{x\cos(nx)}{n} \right]_0^p - \frac{1}{n} \int_0^p \cos(nx) \ \text{d}x \\
   &= \left[ -\frac{x\cos(nx)}{n} \right]_0^p - \frac{1}{n} \left[ \frac{\sin(nx)}{n} \right]_0^p \\
-  &= \left( -\frac{p\cos(np)}{n} - \left[ -\frac{0 \cdot \cos(n \cdot 0)}{n} \right] \right) - \frac{1}{n}\left( \frac{\sin(np)}{n} - \frac{\sin(n \cdot 0)}{n} \right) \\
+  &= -\frac{p\cos(np)}{n} - \left( -\frac{0 \cdot \cos(n \cdot 0)}{n} \right) - \frac{1}{n}\left( \frac{\sin(np)}{n} - \frac{\sin(n \cdot 0)}{n} \right) \\
   &= -\frac{p\cos(np)}{n} - \frac{\sin(np)}{n^2}.
 \end{align*}
 The second integral becomes
@@ -73,5 +73,13 @@ The second integral becomes
 \end{align*}
 Lastly the third integral becomes
 \begin{align*}
-  
+  \int_p^\pi \sin(nx) x \ \text{d}x &= \left[ -\frac{x\cos(nx)}{n} \right]_p^\pi - \frac{1}{n} \int_p^\pi \cos(nx) \ \text{d}x \\
+  &= \left[ -\frac{x\cos(nx)}{n} \right]_p^\pi - \frac{1}{n} \left[ \frac{\sin(nx)}{n} \right]_p^\pi \\
+  &= -\frac{\pi\cos(n \pi)}{n} - \left( -\frac{p\cos(np)}{n} \right) -  \frac{1}{n} \left( \frac{\sin(n\pi)}{n} - \frac{\sin(np)}{n} \right)\\
+  &= \frac{\pi}{n} + \frac{p\cos(np)}{n} + \frac{\sin(np)}{n^2}.
+\end{align*}
+Inserting the three integrals, which we have now solved, yields
+\begin{align*}
+  b_n(\tilde{f}) &= \frac{2}{\pi} \left( \frac{h}{p} \int_0^p \sin(nx) x \ \text{d}x + \frac{h\pi}{\pi - p} \int_p^\pi \sin(nx) \ \text{d}x - \frac{h}{\pi - p} \int_p^\pi \sin(nx)x \ \text{d}x \right) \\
+  &= \frac{2}{\pi} \left( \frac{h}{p} \left( -\frac{p\cos(np)}{n} - \frac{\sin(np)}{n^2} \right) + \frac{h\pi}{\pi - p} \left( \frac{1}{n} + \frac{\cos(np)}{n} \right) - \frac{h}{\pi - p} \left( \frac{\pi}{n} + \frac{p\cos(np)}{n} + \frac{\sin(np)}{n^2} \right) \right)
 \end{align*}
