@@ -56,5 +56,5 @@ To compute the integrals in the above equation we use partial integration with
 \end{align*}
 and the familiar relation
 \begin{align*}
-  \int_a^b f(x)g(x) = \left[ f(x)g(x) \right]_a^b + \int_a^b f'(x)G(x) \ \text{d}x
+  \int_a^b f(x)g(x) = \left[ f(x)g(x) \right]_a^b + \int_a^b f'(x)G(x) \ \text{d}x.
 \end{align*}
