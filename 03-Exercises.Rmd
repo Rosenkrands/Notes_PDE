@@ -1,0 +1,21 @@
+---
+output:
+  html_document: default
+  pdf_document: default
+---
+
+# Exam Exercises
+
+## Mock exam 1
+
+### Exercise 1
+Let $$\Omega:=(0,\infty)^2.$$
+Calculate the solution to the following Cauchy-Problem,
+\begin{align*}
+  &x_1\partial_1u(x) + x_2\partial_2u(x) + x_1x_2u(x) = 0, \quad x \in \Omega; \\
+  &u(q,q^2) = 5, \quad q > 0.
+\end{align*}
+\textbf{Solution}
+
+As the exercise does not ask if the problem is non-characteristic, we suppose that it is.
+The first step is to bring the problem to normal form.
