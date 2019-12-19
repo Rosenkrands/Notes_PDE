@@ -9,13 +9,48 @@ output:
 ## Mock exam 1
 
 ### Exercise 1
-Let $$\Omega:=(0,\infty)^2.$$
+Let 
+$$\Omega:=(0,\infty)^2.$$
 Calculate the solution to the following Cauchy-Problem,
 \begin{align*}
   &x_1\partial_1u(x) + x_2\partial_2u(x) + x_1x_2u(x) = 0, \quad x \in \Omega; \\
   &u(q,q^2) = 5, \quad q > 0.
 \end{align*}
-\textbf{Solution}
 
+\textbf{Solution}
 As the exercise does not ask if the problem is non-characteristic, we suppose that it is.
 The first step is to bring the problem to normal form.
+The normal form is given by 
+$$\nabla u(x)A(x) + u(x)b(x) = f(x).$$
+In our case 
+$$A(x) = \begin{bmatrix} x_1 \\ x_2 \end{bmatrix}, \quad b(x) = x_1x_2 \quad \text{and} \quad f(x) = 0.$$
+
+Next we want to parameterize the hypersurface, which becomes $$\gamma(q) := \begin{bmatrix} q \\ q^2 \end{bmatrix}.$$
+When then seek 
+$$\Phi(t,x),$$ 
+which we find as the solution to 
+$$\partial\Phi(t,x) = A(\Phi(t,x)).$$
+As we in our case have $d = 2$ the ODE can be written as the following system
+\begin{align*}
+  \varphi_1'(t) &= A(\Phi(t))_1, \quad \varphi_1(0) = x_1 \\
+  \varphi_2'(t) &= A(\Phi(t))_2, \quad \varphi_2(0) = x_2,
+\end{align*}
+by the definiton of $A(x)$ the system becomes
+\begin{align*}
+  \varphi_1'(t) &= \varphi(t)_1, \quad \varphi_1(0) = x_1 \\
+  \varphi_2'(t) &= \varphi(t)_2, \quad \varphi_2(0) = x_2.
+\end{align*}
+By solving the system we get the following $\Phi(t,x)$ 
+$$\Phi(t,x) = \begin{bmatrix} \varphi_1(t,x) \\ \varphi_2(t,x) \end{bmatrix} = \begin{bmatrix} x_1e^t \\ x_2e^t \end{bmatrix}.$$
+By Lemma 1.8 we have $X(t,q) = \Phi(t, \gamma(q))$, thus $$X(t,q) = \Phi(t,\gamma(q)) =  \begin{bmatrix} qe^t \\ q^2e^t \end{bmatrix}.$$
+As we seek values for $t$ and $q$ we can now invert the functions
+\begin{align*}
+  x_1 &= qe^t \\
+  x_2 &= q^2e^t
+\end{align*}
+Isolating $q$ in the first equation gives 
+$$x_1 = qe^t \Leftrightarrow e^{-t}x_1 = q,$$
+Inserting this in the second equation yields
+$$x_2 = \left(e^{-t}x_1\right)^2e^t 
+= e^{-2t}x_1^2e^t
+= e^{-t}x_1^2$$
