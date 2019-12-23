@@ -53,4 +53,19 @@ $$x_1 = qe^t \Leftrightarrow e^{-t}x_1 = q,$$
 Inserting this in the second equation yields
 $$x_2 = \left(e^{-t}x_1\right)^2e^t 
 = e^{-2t}x_1^2e^t
-= e^{-t}x_1^2$$
+= e^{-t}x_1^2 
+= \frac{1}{e^{t}} x_1^2,$$
+this in turn gives
+$$x_2 = \frac{1}{e^{t}} x_1^2
+\quad \Leftrightarrow \quad
+e^t = \frac{x_1^2}{x_2}\\
+\quad \Leftrightarrow \quad
+\log\left(e^t\right) = \log\left(\frac{x_1^2}{x_2}\right)
+\quad \Leftrightarrow \quad
+t = \log\left(x_1^2\right) - \log\left(x_2\right).$$
+The expression we have now found for $t$ can be inserted into the expression for $x_1$ to get $q$
+$$q = x_1 e^{-\left(\log\left(x_1^2\right) - \log\left(x_2\right)\right)}
+= x_1 e^{\log\left(x_2\right)-\log\left(x_1^2\right)}
+= x_1 \frac{x_2}{x_1^2} = \frac{x_2}{x_1}.$$
+To sum up we have now found both $t$ and $q$ as
+$$ t = \log\left(x_1^2\right) - \log\left(x_2\right), \quad q = \frac{x_2}{x_1}$$
