@@ -68,4 +68,21 @@ $$q = x_1 e^{-\left(\log\left(x_1^2\right) - \log\left(x_2\right)\right)}
 = x_1 e^{\log\left(x_2\right)-\log\left(x_1^2\right)}
 = x_1 \frac{x_2}{x_1^2} = \frac{x_2}{x_1}.$$
 To sum up we have now found both $t$ and $q$ as
-$$ t = \log\left(x_1^2\right) - \log\left(x_2\right), \quad q = \frac{x_2}{x_1}$$
+$$t = \log\left(x_1^2\right) - \log\left(x_2\right), \quad q = \frac{x_2}{x_1}.$$
+We can now insert in Theorem 1.9 what we have found.
+The theorem states that
+$$Z(t,q) = \phi(\gamma(q))e^{-\int_0^tb(X(s,q))ds} + \int_0^t e^{-\int_s^tb(X(r,q))dr}f(X(s,q))ds,$$
+with $\phi(\gamma(q))$ being $Z(0,q)$ i.e. the given initial value.
+Inserting what we now, especially that $f(x) = 0$, yields
+$$Z(\log\left(x_1^2\right) - \log\left(x_2\right),\frac{x_2}{x_1}) = 5 e^{-q^3\int_0^{\log\left(x_1^2\right) - \log\left(x_2\right)} e^{2s}ds} \\
+= 5 e^{-q^3 \left[\frac{1}{2}e^{2s}\right]_0^{\log\left(x_1^2\right) - \log\left(x_2\right)}} \\
+= 5 e^{-q^3 \frac{1}{2} 
+\left(e^{2\left(\log\left(x_1^2\right) - \log\left(x_2\right)\right)} - e^0\right)} \\
+= 5 e^{-q^3 \frac{1}{2} \left( e^{2\log\left(\frac{x_1^2}{x_2}\right)} - e^0\right)} \\
+= 5 e^{-q^3 \frac{1}{2} \left( e^{\log\left(\frac{x_1^4}{x_2^2}\right)} - e^0\right)} \\
+= 5 e^{-q^3 \frac{1}{2} \left( \frac{x_1^4}{x_2^2} - 1\right)} \\
+= 5 e^{-\frac{x_2^3}{x_1^3} \frac{1}{2} \left( \frac{x_1^4}{x_2^2} - 1\right)} \\
+= 5 e^{-\frac{1}{2} \left( \frac{x_1^4x_2^3}{x_1^3x_2^2} - \frac{x_2^3}{x_1^3}\right)} \\
+= 5 e^{-\left(x_1x_2 - x_2^3/x_1^3\right)/2}.$$
+Which in turns implies that
+$$u(x) = 5 e^{-\left(x_1x_2 - x_2^3/x_1^3\right)/2}, \quad x \in \Omega.$$
