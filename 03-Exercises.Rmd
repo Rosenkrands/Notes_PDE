@@ -86,3 +86,23 @@ $$Z(\log\left(x_1^2\right) - \log\left(x_2\right),\frac{x_2}{x_1}) = 5 e^{-q^3\i
 = 5 e^{-\left(x_1x_2 - x_2^3/x_1^3\right)/2}.$$
 Which in turns implies that
 $$u(x) = 5 e^{-\left(x_1x_2 - x_2^3/x_1^3\right)/2}, \quad x \in \Omega.$$
+
+### Exercise 2
+Let
+$$\Omega := \left\{ x \in \mathbb{R}^2 \ \Bigg| \ \ |x_1 - x_2| < \frac{\pi}{2} \right\}$$
+Calculate the solution for the Cauchy problem given by
+$$\frac{2}{1 + u(x)^2}\partial_1 u(x) + \frac{1}{1 + u(x)^2}\partial_2 u(x) = 1, \quad x \in \Omega \\
+u(q,q) = 0, \quad q \in \mathbb{R}.$$
+
+\textbf{Solution}
+We start by rewriting to normal form
+\begin{align*}
+  \frac{2}{1 + u(x)^2}\partial_1 u(x) + \frac{1}{1 + u(x)^2}\partial_2 u(x) &= 1 \\
+  u'(x)A(x,u(x)) &= b(x,u(x))
+\end{align*}
+for
+\begin{align*}
+  u'(x) &= \left[ \partial_1 u(x) \ \partial_2 u(x) \right]\\
+  A(x,u(x)) &= \begin{bmatrix} \dfrac{2}{1 + u(x)^2} \\ \dfrac{1}{1 + u(x)^2} \end{bmatrix} \\
+  b(x,u(x)) &= 1.
+\end{align*}
