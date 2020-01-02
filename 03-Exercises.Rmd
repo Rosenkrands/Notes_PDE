@@ -94,7 +94,7 @@ Calculate the solution for the Cauchy problem given by
 $$\frac{2}{1 + u(x)^2}\partial_1 u(x) + \frac{1}{1 + u(x)^2}\partial_2 u(x) = 1, \quad x \in \Omega \\
 u(q,q) = 0, \quad q \in \mathbb{R}.$$
 
-\textbf{Solution}
+**Solution**
 We start by rewriting to normal form
 \begin{align*}
   \frac{2}{1 + u(x)^2}\partial_1 u(x) + \frac{1}{1 + u(x)^2}\partial_2 u(x) &= 1 \\
@@ -102,7 +102,50 @@ We start by rewriting to normal form
 \end{align*}
 for
 \begin{align*}
-  u'(x) &= \left[ \partial_1 u(x) \ \partial_2 u(x) \right]\\
-  A(x,u(x)) &= \begin{bmatrix} \dfrac{2}{1 + u(x)^2} \\ \dfrac{1}{1 + u(x)^2} \end{bmatrix} \\
-  b(x,u(x)) &= 1.
+  u'(x) = \left[ \partial_1 u(x) \ \partial_2 u(x) \right], \quad
+  A(x,u(x)) = \begin{bmatrix} \dfrac{2}{1 + u(x)^2} \\ \dfrac{1}{1 + u(x)^2} \end{bmatrix}, \quad
+  b(x,u(x)) = 1.
 \end{align*}
+From Lemma 1.15 we need to solve the following system, notice that the initial condition originate from $u(q,q) = 0$.
+\begin{align*}
+  \partial_t X_1(t,q) &= A(X(t,q), Z(t,q))_1, \quad &&X_1(0,q) = q \\
+  \partial_t X_2(t,q) &= A(X(t,q), Z(t,q))_2, \quad &&X_2(0,q) = q \\
+  \partial_t Z(t,q) &= b(X(t,q), Z(t,q)), \quad &&Z(0,q) = 0.
+\end{align*}
+Inserting what we have found so far yields the following system
+\begin{align*}
+  \partial_t X_1(t,q) &= \dfrac{2}{1 + Z(t,q)^2}, \quad &&X_1(0,q) = q \\
+  \partial_t X_2(t,q) &= \dfrac{1}{1 + Z(t,q)^2}, \quad &&X_2(0,q) = q \\
+  \partial_t Z(t,q) &= 1, \quad &&Z(0,q) = 0.
+\end{align*}
+As $Z(t,q)$ is present in the first to equation, we will start by solving this, then we will insert this in the other two equations and then solve these
+\begin{align*}
+  Z(t,q) &= t \\
+  X_1(t,q) &= 2\tan^{-1}(t) + q \\
+  X_2(t,q) &= \tan^{-1}(t) + q.
+\end{align*}
+We now need to isolate $t$ and $q$ in the to last equations, i.e. 2 equations with 2 unknowns.
+$$x_2 = \tan^{-1}(t) + q 
+\ \Leftrightarrow \ 
+x_2 - q = \tan^{-1}(1)
+\ \Leftrightarrow \
+\tan(x_2 - q) = t.$$
+$$x_1 = 2\tan^{-1}(t) + q
+\ \Leftrightarrow \
+x_1 = 2(x_2 - q) + q
+\ \Leftrightarrow \
+x_1 = 2x_2 - q
+\ \Leftrightarrow \
+q = 2x_2 - x_1.$$
+$$t = \tan(x_2 - q) = \tan(x_2 - (2x_2 - x_1)) = \tan(x_1 - x_2).$$
+As suggested by Theorem 1.16 we have
+$$u(x) = Z(\Psi(x)) = \tan(x_1 - x_2).$$
+
+### Exercise 3
+Solve the following initial-value-problem
+$$(\partial_t^2 - \partial_x^2)u(t,x) = 0, \quad t,x \in \mathbb{R} \\
+u(0,x) = \cos(x), \quad \partial_tu(0,x) = \cos^3(x), \quad x \in \mathbb{R}.$$
+*Hint*: $\cos^3(y) = cos(y) - sin^2(y)cos(y)$
+
+**Solution**:
+Because we have $d=1$ we can use d'Alemberts formula, recognizing that problem is in fact a wave equation.
