@@ -158,4 +158,12 @@ We insert what we know and calculate
 $$u(t,x) = \frac{1}{2}\left\{\cos(x + t) - \cos(x - t)\right\} + \frac{1}{2}\int_{x-t}^{x+t}\cos^3(y)\text{d}y \\
 = \frac{1}{2}\left\{\cos(x + t) - \cos(x - t)\right\} + \frac{1}{2}\int_{x-t}^{x+t}\cos(y) - \sin^2(y)\cos(y)\text{d}y \\
 = \frac{1}{2}\left\{\cos(x + t) - \cos(x - t)\right\} + \frac{1}{2}\int_{x-t}^{x+t}\cos(y)\text{d}y - \frac{1}{2}\int_{x-t}^{x+t}\sin^2(y)\cos(y)\text{d}y \\
-= \frac{1}{2}\left\{\cos(x + t) - \cos(x - t)\right\} + \frac{1}{2}[\sin(y)]_{x-t}^{x+t} - \frac{1}{2}\int_{x-t}^{x+t}\sin^2(y)\cos(y)\text{d}y$$
+= \frac{1}{2}\left\{\cos(x + t) - \cos(x - t)\right\} + \frac{1}{2}[\sin(y)]_{x-t}^{x+t} - \frac{1}{2}\int_{x-t}^{x+t}\sin^2(y)\cos(y)\text{d}y \\
+= \frac{1}{2}\left\{\cos(x + t) - \cos(x - t) + \sin(x + t) - \sin(x - t)\right\} - \frac{1}{2}\int_{x-t}^{x+t}\sin^2(y)\cos(y)\text{d}y,$$
+what remains is to calculate the last antiderivative, which we will do below using substitution
+$$u = \sin(x), \quad \frac{\text{d}u}{\text{d}y} = \cos(y) \ \Leftrightarrow \ \text{d}u = \cos(y)\text{d}y.$$
+We can now insert this into the antiderivative remembering that we also need to substitute the bounds, i.e. applying the function $u$ on them
+$$\frac{1}{2}\int_{x-t}^{x+t}\sin^2(y)\cos(y)\text{d}y \ \Leftrightarrow \ \frac{1}{2}\int_{x-t}^{x+t}\sin^2(y)\cos(y)\text{d}y \\
+\Leftrightarrow \ \frac{1}{2}\int_{\sin(x-t)}^{\sin(x+t)}u^2\text{d}u \ \Leftrightarrow \ \frac{1}{6}[u^3]_{\sin(x-t)}^{\sin(x+t)} \ \Leftrightarrow \ \frac{1}{6}\left(\sin^3(x + t) - \sin^3(x - t)\right).$$
+Inserting what we just found, we have expressed the solution explicitly as
+$$u(t,x) = \frac{1}{2}\left\{\cos(x + t) - \cos(x - t) + \sin(x + t) - \sin(x - t)\right\} - \frac{1}{6}\left(\sin^3(x + t) - \sin^3(x - t)\right).$$
