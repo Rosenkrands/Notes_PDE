@@ -145,7 +145,17 @@ $$u(x) = Z(\Psi(x)) = \tan(x_1 - x_2).$$
 Solve the following initial-value-problem
 $$(\partial_t^2 - \partial_x^2)u(t,x) = 0, \quad t,x \in \mathbb{R} \\
 u(0,x) = \cos(x), \quad \partial_tu(0,x) = \cos^3(x), \quad x \in \mathbb{R}.$$
-*Hint*: $\cos^3(y) = cos(y) - sin^2(y)cos(y)$
+*Hint*: $\cos^3(y) = \cos(y) - \sin^2(y)\cos(y)$
 
 **Solution**:
 Because we have $d=1$ we can use d'Alemberts formula, recognizing that problem is in fact a wave equation.
+
+Remember that $u(0,x) = g(x)$ and that $\partial_tu(0,x) = h(x)$, i.e.
+$$g(x) = \cos(x), \quad h(x) = \cos^3(x).$$
+D'Alamberts formula is given by
+$$u(t,x) = \frac{1}{2}\left\{g(x + t) - g(x - t)\right\} + \frac{1}{2}\int_{x-t}^{x+t}h(y)\text{d}y.$$
+We insert what we know and calculate
+$$u(t,x) = \frac{1}{2}\left\{\cos(x + t) - \cos(x - t)\right\} + \frac{1}{2}\int_{x-t}^{x+t}\cos^3(y)\text{d}y \\
+= \frac{1}{2}\left\{\cos(x + t) - \cos(x - t)\right\} + \frac{1}{2}\int_{x-t}^{x+t}\cos(y) - \sin^2(y)\cos(y)\text{d}y \\
+= \frac{1}{2}\left\{\cos(x + t) - \cos(x - t)\right\} + \frac{1}{2}\int_{x-t}^{x+t}\cos(y)\text{d}y - \frac{1}{2}\int_{x-t}^{x+t}\sin^2(y)\cos(y)\text{d}y \\
+= \frac{1}{2}\left\{\cos(x + t) - \cos(x - t)\right\} + \frac{1}{2}[\sin(y)]_{x-t}^{x+t} - \frac{1}{2}\int_{x-t}^{x+t}\sin^2(y)\cos(y)\text{d}y$$
