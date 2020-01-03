@@ -17,7 +17,7 @@ Calculate the solution to the following Cauchy-Problem,
   &u(q,q^2) = 5, \quad q > 0.
 \end{align*}
 
-\textbf{Solution}
+*Solution*:
 As the exercise does not ask if the problem is non-characteristic, we suppose that it is.
 The first step is to bring the problem to normal form.
 The normal form is given by 
