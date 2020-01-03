@@ -176,3 +176,16 @@ u(t,0) = u(t,\pi) = 0, \quad t>0.$$
 *Hint*: $\sin(2y) = 2\sin(y)\cos(y), \ y \in \mathbb{R}.$
 
 **Solution**:
+As the problem is on the form of a heat equation with homogenous Dirichlet bound-conditions, the solution according to theorem 4.10 given by
+$$u(t,x) = \sum_{n = 1}^\infty e^{-tn^2\pi^2/2\ell^2} B_n \sin(n\pi x/\ell)\text{d}y.$$
+We define $B_n$ as
+$$B_n := \frac{2}{\ell} \int_0^\ell g(x)\sin(n\pi x/\ell)\text{d}x, \quad n\in\mathbb{N},$$
+in our case $\ell = \pi$ and $g(x) = 4\sin(3x)\sin(3x)$, we see that according to the hint
+$$\sin(2y) = 2\sin(y)\cos(y) \ \Leftrightarrow \ 2\sin(6y) = 4\sin(3y)\cos(3y).$$
+We can see that $g(x) = 2\sin(6x)$, we insert what we know into the definition of $B_n$ to get
+$$B_n = \frac{2}{\pi}\int_0^\pi2\sin(6x)\sin(nx)\text{d}x, \quad n \in \mathbb{N}.$$
+According to theorem 4.10 the solution to the problem is given by
+$$u(t,x) = \sum_{n = 1}^\infty e^{-tn^2/2}\frac{2}{\pi}\int_0^\pi2\sin(6x)\sin(nx)\text{d}x\sin(nx).$$
+Furthermore, according to remark C.3 there is only one $n$ for which the term in the sum is not equal to zero, namely $n = 6$, as $n=m$.
+Thus the solution can be simplified to the following
+$$u(t,x) = 2e^{-t6^2/2}\sin(6x) = 2e^{-18t}\sin(6x).$$
