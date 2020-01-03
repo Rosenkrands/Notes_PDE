@@ -189,3 +189,7 @@ $$u(t,x) = \sum_{n = 1}^\infty e^{-tn^2/2}\frac{2}{\pi}\int_0^\pi2\sin(6x)\sin(n
 Furthermore, according to remark C.3 there is only one $n$ for which the term in the sum is not equal to zero, namely $n = 6$, as $n=m$.
 Thus the solution can be simplified to the following
 $$u(t,x) = 2e^{-t6^2/2}\sin(6x) = 2e^{-18t}\sin(6x).$$
+
+## Mock exam 2
+
+### Exercise 1
