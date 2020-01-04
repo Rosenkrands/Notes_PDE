@@ -25,7 +25,7 @@ where
 \end{align*}
 Convince yourself that $\sum_{n = 1}^\infty |A_n| < \infty$ such that one can utilize theorem C.8.
 \newline
-\texit{Hint:} You can safe time by expanding $f$ as an uneven function on $[-\pi, \pi]$ and use remark C.4.
+**Hint**: You can safe time by expanding $f$ as an uneven function on $[-\pi, \pi]$ and use remark C.4.
 \newline
 \textbf{Solution:}
 \newline
