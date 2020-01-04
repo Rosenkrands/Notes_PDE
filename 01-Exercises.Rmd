@@ -3,6 +3,49 @@ output:
   pdf_document: default
   html_document: default
 ---
+# Exercise 1.4
+
+Linear PDE, rewrite to normal form
+\begin{align*}
+  \nabla u(x) \begin{bmatrix} -x_2 \\ x_1 \end{bmatrix} - u(x) = 0
+\end{align*}
+thus
+\begin{align*}
+  A(x) = \begin{bmatrix} -x_2 \\ x_1 \end{bmatrix}, \quad b(x) = -1, \quad f(x) = 0.
+\end{align*}
+We then solve $\partial_t\Phi(t,x) = A(\Phi(t,x))$,
+\begin{align*}
+  \varphi_1'(t) = -\varphi_2(t), \quad \varphi_1(0) = x_1 \\
+  \varphi_2'(t) = -\varphi_1(t), \quad \varphi_2(0) = x_2.
+\end{align*}
+Thus $\Phi(t,x) = e^{t\begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix}} = \begin{bmatrix} \cos(t) & -\sin(t) \\ \sin(t) & \cos(t) \end{bmatrix}\begin{bmatrix} x_1 \\ x_2 \end{bmatrix} = \begin{bmatrix} x_1\cos(t) - x_2\sin(t) \\ x_1\sin(t) + x_2\cos(t) \end{bmatrix}.$
+Parameterizing the hypersurface gives $\gamma(q) = \begin{bmatrix} q \\ 0 \end{bmatrix}$.
+By Lemma 1.8
+\begin{align*}
+  X(t,q) = \Phi(t,\gamma(q)) = \begin{bmatrix} q\sin(t) \\ q\cos(t) \end{bmatrix}.
+\end{align*}
+Inverting the function gives
+$$
+  x_1 = \cos(t) \ \Leftrightarrow \ \frac{x_1}{q} = \cos(t) \ \Leftrightarrow \ t = \cos^{-1}\left(\frac{x_1}{q}\right).
+$$
+Now we have found $t$ which we can use to find $q$ as
+\begin{align*}
+  x_2 &= q\sin(t) \\
+  &= q\sin\left(\cos^{-1}\left(\frac{x_1}{q}\right)\right) \\
+  &= q\sqrt{1 - \frac{x_1^2}{q^2}} \\
+  x_2^2 &= q^2 - x_1^2 \\
+  q^2 &= x_1^2 + x_2^2 \\
+  q &= \sqrt{x_1^2 + x_2^2} \\
+  &= \| x \|.
+\end{align*}
+By Theorem 1.9
+\begin{align*}
+  Z(\psi) &= g(\| x \|)e^{-\int_0^{\cos^-1(x_1/\| x \|)}-1 \ \text{d}s} \\
+  &= g(\| x \|)e^{\cos^-1(x_1/\| x \|)}.
+\end{align*}
+Not quite the answer but this is as close as i can get.
+
+
 # Exercise 1.8
 The exercise is to solve the following Cauchy-problem
 \begin{align}
