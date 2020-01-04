@@ -193,3 +193,71 @@ $$u(t,x) = 2e^{-t6^2/2}\sin(6x) = 2e^{-18t}\sin(6x).$$
 ## Mock exam 2
 
 ### Exercise 1
+
+Let $\Omega = \left\{ x \in \mathbb{R}^2 \ | \ x_2 > x_1 \right\}$, find the solution to the following Cauchy-problem
+\begin{align*}
+  &\partial_1u(x) + \partial_2u(x) + x_1u(x) = e^{-x_2^2/2}, \quad x \in \Omega \\
+  &u(0,q) = 1, \quad q > 0.
+\end{align*}
+
+**Solution**:
+The first step is to bring the problem to normal form i.e.
+\begin{align*}
+  u'(x)A(x) + u(x)b(x) = f(x) \\
+  \begin{bmatrix}\partial_1 u(x) & \partial_2 u(x)\end{bmatrix}\begin{bmatrix}1 \\ 1 \end{bmatrix} + u(x)x_1 = e^{-x^2_2/2}
+\end{align*}
+this implies that
+\begin{align*}
+  A(x) = \begin{bmatrix}1 \\ 1 \end{bmatrix}, \quad b(x) = x_1, \quad f(x) = e^{-x^2_2/2}
+\end{align*}
+Parameterizing the hypersurface gives $\gamma(q) = \begin{bmatrix} 0 \\ q \end{bmatrix}$.
+We then seek $\Phi(t,x)$ which we find as the solution to $\partial_t\Phi(t,x) = A(\Phi(t,x))$.
+As we in our case have $d = 2$, the ODE becomes a system of differential equations given as
+\begin{align*}
+  \varphi_1'(t) = A(\Phi(t))_1, \quad \varphi_1(0) = x_1 \\
+  \varphi_2'(t) = A(\Phi(t))_2, \quad \varphi_2(0) = x_2.
+\end{align*}
+The system in our case becomes
+\begin{align*}
+  \varphi_1'(t) = 1, \quad \varphi_1(0) = x_1 \\
+  \varphi_2'(t) = 1, \quad \varphi_2(0) = x_2,
+\end{align*}
+by solving the system we get
+$$\Phi(t) = \begin{bmatrix} x_1 + t \\ x_2 + t \end{bmatrix},$$
+and by Lemma 1.8 we have
+$$X(t,q) = \Phi(t, \gamma(q)) = \begin{bmatrix} t \\ q + t \end{bmatrix}.$$
+Thus seeking values for $t$ and $q$ we invert the function
+\begin{align*}
+  x_1 &= t \\
+  x_2 &= q + t.
+\end{align*}
+This implies that
+\begin{align*}
+  t &= x_1 \\
+  q &= x_2 - X_1.
+\end{align*}
+We can now insert this into the formula from theorem 1.9
+\begin{align*}
+  Z(t,q) &= \phi(\gamma(q)) e^{\int_0^tb(X(s,q))\text{d}s} + \int_0^te^{-\int_s^tb(X(r,q))\text{d}r}f(X(s,q))\text{d}s \\
+  &= e^{-\int_0^{x_1}s \ \text{d}s} + \int_0^{x_1}e^{-\int_s^{x_1}r \ \text{d}r}e^{-(q + s)^2/2}\text{d}s \\
+  &= e^{-\int_0^{x_1}s \ \text{d}s} + \int_0^{x_1}e^{-\int_s^{x_1}r \ \text{d}r}e^{-((x_2 - x_1) + s)^2/2}\text{d}s
+\end{align*}
+We can start by solving the following integrals
+\begin{align*}
+  &-\int_0^{x_1}s \ \text{d}s = -\left[ \frac{1}{2}s^2\right]_0^{x_1} = -\frac{1}{2}x^2_1 \\
+  &-\int_s^{x_1} r \ \text{d}r = -\left[\frac{1}{2}r^2\right]_s^{x_1} = -\frac{1}{2}\left( x_1^2 - s^2 \right).
+\end{align*}
+Inserting these gives
+\begin{align*}
+  Z(t,q) &= e^{-x_1^2/2} + \int_0^{x_1}e^{-\frac{1}{2}\left( x_1^2 - s^2 \right)-((x_2 - x_1)^2 + s^2 + 2(x_2 - x_1)s)/2}\text{d}s \\
+  &= e^{-x^2_1/2} + \int_0^{x_1}e^{-\left( x_1^2 - s^2 \right)/2-((x_2 - x_1)^2 + s^2 + 2(x_2 - x_1)s)/2}\text{d}s \\
+  &= e^{-x^2_1/2} + \int_0^{x_1}e^{( -x_1^2 + s^2 - (x_2 - x_1)^2 - s^2 - 2(x_2 - x_1)s)/2}\text{d}s \\
+  &= e^{-x^2_1/2} + e^{(-x_1^2 - x_2^2 - x_1^2 + 2x_2x_1)/2} \int_0^{x_1}e^{-(x_2 - x_1)s}\text{d}s \\
+  &= e^{-x^2_1/2} + e^{-x_1^2 + x_2x_1 - x_2^2/2} \left[-\frac{1}{x_2 - x_1}e^{-(x_2 - x_1)s}\right]_0^{x_1} \\
+  &= e^{-x^2_1/2} + e^{-x_1^2 + x_2x_1 - x_2^2/2} \left(-\frac{e^{-(x_2 - x_1)x_1}}{x_2 - x_1} + \frac{1}{x_2 - x_1}\right) \\
+  &= e^{-x^2_1/2} + e^{-x_1^2 + x_2x_1 - x_2^2/2} \left(-\frac{e^{-(x_2 - x_1)x_1}}{x_2 - x_1} + \frac{1}{x_2 - x_1}\right) \\
+  &= e^{-x^2_1/2} + \frac{e^{-x_1^2 + x_2x_1 - x_2^2/2} - e^{-x_1^2 + x_2x_1 - x_2^2/2 - x_2x_1 + x_1^2}}{x_2 - x_1} \\
+  &= e^{-x^2_1/2} + \frac{e^{-x_1^2 + x_2x_1 - x_2^2/2} - e^{ - x_2^2/2}}{x_2 - x_1}.
+\end{align*}
+
+### Exercise 3
