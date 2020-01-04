@@ -2,7 +2,7 @@
 title: "Partial Differential Equation Notes"
 author: "Kasper Rosenkrands"
 date: "24.09.2019"
-output: bookdown::pdf_book
+output: bookdown::gitbook
 site: bookdown::bookdown_site
 ---
   
