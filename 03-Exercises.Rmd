@@ -375,4 +375,19 @@ In our case $\ell = \pi$ and $g(x) = \cos^2(7x)$, we start by calculating $A_0$
   &= \frac{2}{\pi}\left( \int_0^\pi \frac{1}{2} \ \text{d}x +\frac{1}{4}\int_0^\pi \cos(14x) \ \text{d}x\right)
 \end{align*}
 we substitute in the right most integral using
-$$u = 14x, \quad \frac{\text{d}u}{\text{d}x} = 14 \ \Leftrightarrow \ \text{d}u = 14 \ \text{d}x \ \Leftrightarrow \ \frac{1}{14} \ \text{d}u = \text{d}x$$
+$$u = 14x, \quad \frac{\text{d}u}{\text{d}x} = 14 \ \Leftrightarrow \ \text{d}u = 14 \ \text{d}x \ \Leftrightarrow \ \frac{1}{14} \ \text{d}u = \text{d}x,$$
+giving us
+\begin{align*}
+  &= \frac{2}{\pi}\left( \left[\frac{1}{2}x\right]_0^\pi +\frac{1}{4}\left[\sin(u)\right]_0^{14\pi}\right) \\
+  &=\frac{2}{\pi}\frac{\pi}{2} = 1.
+\end{align*}
+Inserting in the solution
+\begin{align*}
+  u(t,x) &= \frac{1}{2} + \sum_{n = 1}^{\infty}e^{tn^2/2}\frac{2}{\pi}\left(\int_0^\pi\left(1+\cos(14x)/2\right)/2\cos(nx) \ \text{d}x\right)\cos(nx) \\
+  &= \frac{1}{2} + \sum_{n = 1}^{\infty}e^{tn^2/2}\frac{2}{\pi}\left(\int_0^\pi\frac{1}{2} \ \text{d}x \frac{1}{4}\int_0^\pi \cos(14x)\cos(nx) \ \text{d}x\right)\cos(nx) \\
+  &= \frac{1}{2} + \sum_{n = 1}^{\infty}e^{tn^2/2}\frac{2}{\pi}\int_0^\pi\frac{1}{2} \ \text{d}x + \frac{1}{2\pi}\int_0^\pi \cos(14x)\cos(nx) \ \text{d}x\cos(nx) \\
+  &= \frac{1}{2} + \sum_{n = 1}^{\infty}e^{tn^2/2}\frac{2}{\pi}\int_0^\pi\frac{1}{2} \ \text{d}x + \frac{1}{4\pi}\int_{-\pi}^\pi \cos(14x)\cos(nx) \ \text{d}x\cos(nx) \\
+  &= \frac{1}{2} + e^{-t14^2/2} \cos(14x)/4 \\
+  &= \frac{1}{2} + \frac{1}{4}e^{-98t} \cos(14x).
+\end{align*}
+The disappearance of the sum follows form remark C.4 on page 167.
