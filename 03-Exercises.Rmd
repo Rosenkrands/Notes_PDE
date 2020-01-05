@@ -17,7 +17,7 @@ Calculate the solution to the following Cauchy-Problem,
   &u(q,q^2) = 5, \quad q > 0.
 \end{align*}
 
-*Solution*:
+**Solution**:
 As the exercise does not ask if the problem is non-characteristic, we suppose that it is.
 The first step is to bring the problem to normal form.
 The normal form is given by 
@@ -260,4 +260,4 @@ Inserting these gives
   &= e^{-x^2_1/2} + \frac{e^{-x_1^2 + x_2x_1 - x_2^2/2} - e^{ - x_2^2/2}}{x_2 - x_1}.
 \end{align*}
 
-### Exercise 3
+### Exercise 2
