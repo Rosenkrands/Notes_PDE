@@ -314,7 +314,7 @@ solve the follwoing initial value problem
 \end{align*}
 
 **Solution**:
-We are dealing with an initial value problem for a wave equation as deifned in definition 2.3.
+We are dealing with an initial value problem for a wave equation as defined in definition 2.3.
 To solve the problem we look to Lemma 2.4.
 
 We need to first solve
@@ -325,5 +325,29 @@ We need to first solve
 this is done using (2.28), also known as d'Alamberts formula
 \begin{align*}
   v(t,x) &= \frac{1}{2} \left\{\cos(x + t) + \cos(x-t)\right\} + \frac{1}{2} \int_{x-t}^{x+t} 0 \ \text{d}y \\
-  &= \frac{1}{2} \left\{\cos(x + t) + \cos(x-t)\right\}
+  &= \frac{1}{2} \left\{\cos(x + t) + \cos(x-t)\right\}.
 \end{align*}
+Then we need to solve
+\begin{align*}
+   \left( \partial_t^2 - \partial_x^2 \right)w(t,x) = \sin(x - t), \quad t,x \in \mathbb{R} \\
+   w(0,x) = \partial_tw(0,x) = 0,
+\end{align*}
+according to remark 2.26 the solution is given by
+\begin{align*}
+  w(t,x) 
+  &= \frac{1}{2}\left(\int_0^t\int_{x-(t-s)}^{x+t-s}\sin(y - s) \ \text{d}y \ \text{d}s\right) \\
+  &= \frac{1}{2}\left(\int_0^t\left[-\cos(s - y)\right]_{x-(t-s)}^{x+t-s} \ \text{d}s\right) \\
+  &= \frac{1}{2}\left(\int_0^t \cos(s - x + t - s) - \cos(s - x - t + s) \ \text{d}s\right)
+\end{align*}
+we split the integral and solve the right most by substitution as follows
+$$u = 2s - x - t, \quad \frac{\text{d}u}{\text{d}s} = 2 \ \Leftrightarrow \ \text{d}u = 2 \ \text{d}s \ \Leftrightarrow \ \frac{1}{2} \ \text{d}u = \text{d}s,$$
+this gives
+\begin{align*}
+  &= \frac{1}{2}\left(\int_0^t \cos(x + t) \ \text{d}s - \frac{1}{2}\int_{-x-t}^{t-x} \cos(u) \ \text{d}u\right) \\
+  &= \frac{1}{2}\left(\left[\cos(x + t)s\right]_0^t - \frac{1}{2}\left[\sin(u)\right]_{-x-t}^{t-x} \right) \\
+  &= \frac{1}{2}\left(\cos(x + t)t - \frac{1}{2}\left(\sin(t-x) - \sin(-x-t)\right) \right) \\
+  &= \frac{t}{2}\cos(x + t) - \frac{1}{4}\left(\sin(t-x) - \sin(-x-t)\right) \\
+  &= \frac{t}{2}\cos(x + t) + \frac{1}{4}\left(\sin(t - x) - \sin(x + t)\right).
+\end{align*}
+Now that we have found both solution we to add these to together to achive the solution for the original problem, i.e. $u = v + w$
+$$u(t,x) = \frac{1}{2} \left\{\cos(x + t) + \cos(x-t)\right\} + \frac{t}{2}\cos(x + t) + \frac{1}{4}\left(\sin(t - x) - \sin(x + t)\right)$$
