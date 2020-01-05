@@ -261,3 +261,37 @@ Inserting these gives
 \end{align*}
 
 ### Exercise 2
+
+Let $q_0 > 1$.
+Calculate the solution of the following Cauchy-problem in a small neighbourhood of $(1,q_0)$,
+\begin{align*}
+  x_1\partial_2u(x) - x_2\partial_1u(x) = 0 \\
+  u(1,q) = \cos(q), \quad q \in \mathbb{R}.
+\end{align*}
+*Hint*:
+If we use the definition from the notes, then the length of the vector $X(t,q)$ not of $t$.
+
+**Solution**:
+This is a linear PDE, so the first thing is to bring it to normal form
+\begin{align*}
+  \nabla u(x) \begin{bmatrix} -x_2 \\ x_1 \end{bmatrix} + u(x) \cdot 0 = 0,
+\end{align*}
+thus
+\begin{align*}
+  A(x) = \begin{bmatrix} -x_2 \\ x_1 \end{bmatrix}, \quad b(x) = 0, \quad f(x) = 0.
+\end{align*}
+Next we find $\Phi(t,x)$ as $\partial_t\Phi(t,x) = A(\Phi(t,x))$ yields the following system
+\begin{align*}
+  \varphi_1'(t) &= -\varphi_2(t), \quad &&\varphi_1(0) = x_1 \\
+  \varphi_2'(t) &= \varphi_1(t), \quad &&\varphi_2(0) = x_2.
+\end{align*}
+This is a system of differential equations, which can be ezpressed in matrix notation as
+\begin{align*}
+  \begin{bmatrix} \varphi_1'(t) \\ \varphi_2'(t) \end{bmatrix} = \begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix}\begin{bmatrix} \varphi_1(t) \\ \varphi_2(t) \end{bmatrix}.
+\end{align*}
+By Putzer's algorithm the solution is
+\begin{align*}
+  \begin{bmatrix} \varphi_1(t) \\ \varphi_2(t) \end{bmatrix} &= e^{t\begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix}}\begin{bmatrix} x_1 \\ x_2 \end{bmatrix}\\
+  &= \begin{bmatrix} \cos(t) & -\sin(t) \\ \sin(t) & \cos(t) \end{bmatrix}\begin{bmatrix} x_1 \\ x_2 \end{bmatrix}\\
+  &=
+\end{align*}
