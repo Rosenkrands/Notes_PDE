@@ -361,4 +361,18 @@ Solve the following mixed initial-value/boundary-value-problem
   \partial_xu(t,0) = \partial_xu(t,\pi) = 0, \quad t > 0.
 \end{align*}
 
-*Hint*: $\cos^2(y) = (1 + \cos(2y)/2)/2
+*Hint*: $\cos^2(y) = (1 + \cos(2y)/2)/2, \quad y \in \mathbb{R}.$
+
+**Solution**: Heat equation on an interval with homogenous Neumann conditions.
+we remember the defintion of $A_n$
+$$A_n := \frac{2}{\ell}\int_0^\ell g(x)\cos(n\pi x/\ell) \ \text{d}x, \quad n \in \mathbb{N_0}.$$
+Theorem 4.11 states that the solution is given by
+$$u(t,x) = \frac{A_0}{2} + \sum_{n = 1}^\infty e^{-tn^2\pi^2/2\ell^2}A_n\cos(n\pi x/\ell).$$
+In our case $\ell = \pi$ and $g(x) = \cos^2(7x)$, we start by calculating $A_0$
+\begin{align*}
+  A_0 &= \frac{2}{\pi} \int_0^\pi \cos^2(7x) \ \text{d}x \\
+  &= \frac{2}{\pi} \int_0^\pi (1+\cos(14x)/2)/2 \ \text{d}x \\
+  &= \frac{2}{\pi}\left( \int_0^\pi \frac{1}{2} \ \text{d}x +\frac{1}{4}\int_0^\pi \cos(14x) \ \text{d}x\right)
+\end{align*}
+we substitute in the right most integral using
+$$u = 14x, \quad \frac{\text{d}u}{\text{d}x} = 14 \ \Leftrightarrow \ \text{d}u = 14 \ \text{d}x \ \Leftrightarrow \ \frac{1}{14} \ \text{d}u = \text{d}x$$
