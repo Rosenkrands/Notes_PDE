@@ -137,3 +137,38 @@ Multiplying both sides of \@ref(eq:texpression) by $2$ gives
   t - 1 &= \pm\sqrt{2x_1 - 2x_2 + 1} \\
   t &= 1 \pm\sqrt{2x_1 - 2x_2 + 1} (\#eq:psi1)
 \end{align}
+
+# Exercise 1.10
+
+Find a solution for the Cauchy-problem
+\begin{align*}
+  \partial_1u(x) + \partial_2u(x) = u(x)^2 \\
+  u(x_1,0) = g(x_1)
+\end{align*}
+
+**Solution**:
+This is a kvasilinear PDE, we will start by bringing it to normal form
+\begin{align*}
+  A(x,u(x)) = \begin{bmatrix} 1 \\ 1 \end{bmatrix}, \quad b(x,u(x)) = u(x)^2.
+\end{align*}
+From Lemma 1.15
+\begin{align*}
+  \partial_t X_1(t,q) &= 1, \quad &&X_1(0,q) = q \\
+  \partial_t X_2(t,q) &= 1, \quad &&X_2(0,q) = 0 \\
+  \partial_t Z(t,q) &= Z(t,q)^2, \quad &&Z(0,q) = g(q).
+\end{align*}
+We solve the system
+\begin{align*}
+  Z(t,q) &= \frac{1}{\frac{1}{g(q)} - t} \\
+  X_1(t,q) &= q + t \\
+  X_2(t,q) &= t.
+\end{align*}
+We can now invert $t$ and $q$
+\begin{align*}
+  x_1 = q + t, \quad x_2 = t \\
+  t = x_2, \quad x_1 = q + x_2 \ \Leftrightarrow \ q = x_1 - x_2.
+\end{align*}
+From theorem 1.16
+\begin{align*}
+  u(x) = Z(\psi(x)) = \frac{1}{\frac{1}{g(x_1 - x_2)} - x_2}
+\end{align*}
