@@ -350,4 +350,15 @@ this gives
   &= \frac{t}{2}\cos(x + t) + \frac{1}{4}\left(\sin(t - x) - \sin(x + t)\right).
 \end{align*}
 Now that we have found both solution we to add these to together to achive the solution for the original problem, i.e. $u = v + w$
-$$u(t,x) = \frac{1}{2} \left\{\cos(x + t) + \cos(x-t)\right\} + \frac{t}{2}\cos(x + t) + \frac{1}{4}\left(\sin(t - x) - \sin(x + t)\right)$$
+$$u(t,x) = \frac{1}{2} \left\{\cos(x + t) + \cos(x-t)\right\} + \frac{t}{2}\cos(x + t) + \frac{1}{4}\left(\sin(t - x) - \sin(x + t)\right).$$
+
+### Exercise 4
+
+Solve the following mixed initial-value/boundary-value-problem
+\begin{align*}
+  \left(\partial_t - \frac{1}{2}\partial_x^2\right)u(t,x) = 0, \quad t > 0, \ x \in (0,\pi) \\
+  u(0,x) = \cos^2(7x), \quad x \in (0,\pi) \\
+  \partial_xu(t,0) = \partial_xu(t,\pi) = 0, \quad t > 0.
+\end{align*}
+
+*Hint*: $\cos^2(y) = (1 + \cos(2y)/2)/2
