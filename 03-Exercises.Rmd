@@ -401,3 +401,8 @@ Find a solution of the following initial-value-problem
 \end{align*}
 
 **Solution**:
+As it is an initial-value-problem of the form of a wave equation (inhomogenous).
+From corollary 3.13 the solution is given by
+\begin{align*}
+  \int_\mathbb{R}
+\end{align*}
