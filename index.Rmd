@@ -10,7 +10,8 @@ site: bookdown::bookdown_site
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+\newpage
+
 # Introduction {-}
 
 This book will include notes and exercises as well as mock exams from the Partial Differential Equations course at Aalborg University.
-\newpage
