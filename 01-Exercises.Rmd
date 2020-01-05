@@ -58,7 +58,7 @@ with
   \Sigma = \left\{ (q,q) \ | \ q \in \mathbb{R} \right\}
 \end{align}
  
-## Transform to normal form
+### Transform to normal form
 The normal form is given by  
 \begin{align}
   u'(x) A(x) + b(x) u(x) = f(x), \qquad x \in \Omega
@@ -87,7 +87,7 @@ which in turn gives us that \@ref(eq:normal) becomes
   \nabla u(x) A(x,z) = 1
 \end{align}
 
-## Parameterizing the hypersurface
+### Parameterizing the hypersurface
 The initial hypersurface $\Sigma$ by the following
 $$\gamma(q) := \begin{bmatrix} q \\ q \end{bmatrix}, \qquad q \in \mathbb{R}.$$
 Taking the derivative of the parameterization yields
@@ -98,7 +98,7 @@ The condition that $A\Big(\gamma(q), \phi(\gamma(q))\Big) \in T_{\gamma(q)}\Sigm
 $$A\Big(\gamma(q), \phi(\gamma(q))\Big) = \begin{bmatrix} 0 \\ 1\end{bmatrix}.$$
 The Cauchy problem is non-characteristic in everything point contained in $\Sigma$.
 
-## System of equations
+### System of equations
 We get the following system of equations
 \begin{align}
   \partial_t x_1(t,q) &= Z(t,q) \quad&&, \ x_1(0,q) = q (\#eq:system1) \\
@@ -117,7 +117,7 @@ Considering \@ref(eq:system1) and \@ref(eq:bigz) we see that
   &= q + \frac{1}{2} t^2.
 \end{align}
 
-## Finding t and q
+### Finding t and q
 We will start by finding $t$, we have the following expressions
 $$x_1 = q + \frac{1}{2} t^2, \qquad x_2 = q + t.$$
 We can start by isolating $q$ is the second equation

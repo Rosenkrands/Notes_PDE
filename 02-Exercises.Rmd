@@ -3,88 +3,89 @@ output:
   html_document: default
   pdf_document: default
 ---
-# Fourier Series
 
-## Exercise C.1
+<!-- # Fourier Series -->
 
-Let $p \in (0, \pi), \ h \in \mathbb{R}$ and define
-\begin{align*}
-  f(x) = 
-  \begin{cases}
-    \dfrac{hx}{p}, &x\in[0,p], \\[2ex]
-    \dfrac{h(\pi - x)}{\pi - p}, &x\in(p, \pi].
-  \end{cases}
-\end{align*}
-Show that
-\begin{align*}
-  f(x) = \sum_{n = 1}^\infty A_n \sin(nx), \quad x\in[o, \pi],
-\end{align*}
-where
-\begin{align*}
-  A_n := \frac{2h}{n^2} \frac{\sin(np)}{p(\pi - p)}, \quad n \in \mathbb{N}.
-\end{align*}
-Convince yourself that $\sum_{n = 1}^\infty |A_n| < \infty$ such that one can utilize theorem C.8.
-\newline
-**Hint**: You can safe time by expanding $f$ as an uneven function on $[-\pi, \pi]$ and use remark C.4.
-\newline
-\textbf{Solution:}
-\newline
-The first thing to do is to expand $f$ as an uneven function.
-This is done as follows
-\begin{align*}
-  \tilde{f}(x) =
-  \begin{cases}
-    f(x), &x\in[0, \pi] \\[2ex]
-    -f(-x), &x\in[-\pi, 0).
-  \end{cases}
-\end{align*}
-Remark C.4 now tells that because $\tilde{f}$ is uneven $a_n(\tilde{f}) = 0$ for all $n\in\mathbb{N}_0$ and
-\begin{align*}
-  b_n(\tilde{f}) = \frac{2}{l} \int_0^l \sin(n \pi x/l)\tilde{f}(x)\text{d}x, \quad n \in \mathbb{N}.
-\end{align*}
-With our uneven expansion of $f$ our $b_n(\tilde{f})$ becomes
-\begin{align*}
-  b_n(\tilde{f}) &= \frac{2}{\pi} \int_0^\pi \sin(n\pi x/\pi) \tilde{f}(x) \ \text{d}x \\
-  &= \frac{2}{\pi} \left( \int_0^p \sin(nx)\frac{hx}{p} \ \text{d}x + \int_p^\pi \sin(nx)\frac{h(\pi - x)}{\pi - p} \ \text{d}x \right) \\
-  &= \frac{2}{\pi} \left( \frac{h}{p} \int_0^p \sin(nx) x \ \text{d}x + \frac{h}{\pi - p} \int_p^\pi \sin(nx)(\pi - x) \ \text{d}x \right) \\
-  &= \frac{2}{\pi} \left( \frac{h}{p} \int_0^p \sin(nx) x \ \text{d}x + \frac{h\pi}{\pi - p} \int_p^\pi \sin(nx) \ \text{d}x - \frac{h}{\pi - p} \int_p^\pi \sin(nx)x \ \text{d}x \right).
-\end{align*}
-To compute the integrals in the above equation we use partial integration with
-\begin{align*}
-  f(x) &= x, \qquad &&f'(x) = 1 \\
-  g(x) &= \sin(nx), \qquad &&G(x) = -\frac{\cos(nx)}{n},
-\end{align*}
-and the familiar relation
-\begin{align*}
-  \int_a^b f(x)g(x) = \left[ f(x)G(x) \right]_a^b + \int_a^b f'(x)G(x) \ \text{d}x.
-\end{align*}
-This means that the first integral becomes
-\begin{align*}
-  \int_0^p\sin(nx) x \ \text{d}x &= \left[ -\frac{x\cos(nx)}{n} \right]_0^p - \frac{1}{n} \int_0^p \cos(nx) \ \text{d}x \\
-  &= \left[ -\frac{x\cos(nx)}{n} \right]_0^p - \frac{1}{n} \left[ \frac{\sin(nx)}{n} \right]_0^p \\
-  &= -\frac{p\cos(np)}{n} - \left( -\frac{0 \cdot \cos(n \cdot 0)}{n} \right) - \frac{1}{n}\left( \frac{\sin(np)}{n} - \frac{\sin(n \cdot 0)}{n} \right) \\
-  &= -\frac{p\cos(np)}{n} - \frac{\sin(np)}{n^2}.
-\end{align*}
-The second integral becomes
-\begin{align*}
-  \int_p^\pi \sin(nx) \ \text{d}x &= \left[ -\frac{\cos(nx)}{n} \right]_p^\pi \\
-  &= -\frac{\cos(n \pi)}{n} - \left( -\frac{\cos(np)}{n} \right) \\
-  &= \frac{1}{n} + \frac{\cos(np)}{n}.
-\end{align*}
-Lastly the third integral becomes
-\begin{align*}
-  \int_p^\pi \sin(nx) x \ \text{d}x &= \left[ -\frac{x\cos(nx)}{n} \right]_p^\pi - \frac{1}{n} \int_p^\pi \cos(nx) \ \text{d}x \\
-  &= \left[ -\frac{x\cos(nx)}{n} \right]_p^\pi - \frac{1}{n} \left[ \frac{\sin(nx)}{n} \right]_p^\pi \\
-  &= -\frac{\pi\cos(n \pi)}{n} - \left( -\frac{p\cos(np)}{n} \right) -  \frac{1}{n} \left( \frac{\sin(n\pi)}{n} - \frac{\sin(np)}{n} \right)\\
-  &= \frac{\pi}{n} + \frac{p\cos(np)}{n} + \frac{\sin(np)}{n^2}.
-\end{align*}
-Inserting the three integrals, which we have now solved, yields
-\begin{align*}
-  b_n(\tilde{f}) &= \frac{2}{\pi} \left( \frac{h}{p} \int_0^p \sin(nx) x \ \text{d}x + \frac{h\pi}{\pi - p} \int_p^\pi \sin(nx) \ \text{d}x - \frac{h}{\pi - p} \int_p^\pi \sin(nx)x \ \text{d}x \right) \\
-  &= \frac{2}{\pi} \left( \frac{h}{p} \left( -\frac{p\cos(np)}{n} - \frac{\sin(np)}{n^2} \right) + \frac{h\pi}{\pi - p} \left( \frac{1}{n} + \frac{\cos(np)}{n} \right) - \frac{h}{\pi - p} \left( \frac{\pi}{n} + \frac{p\cos(np)}{n} + \frac{\sin(np)}{n^2} \right) \right) \\
-  &= \frac{2}{\pi} \left(-\frac{hp\cos(np)}{pn} - \frac{h\sin(np)}{pn^2} + \frac{h\pi\cos(np)}{n(\pi - p)} - \frac{hp\cos(np)}{n(\pi - p)} - \frac{h\sin(np)}{n^2(\pi - p)} \right) \\
-  &= -\frac{2hp\cos(np)}{\pi pn} - \frac{2h\sin(np)}{\pi pn^2} + \frac{2h\pi\cos(np)}{\pi n(\pi - p)} - \frac{2hp\cos(np)}{\pi n(\pi - p)} - \frac{2h\sin(np)}{\pi n^2(\pi - p)} \\
-  &= -\frac{2h\cos(np)}{\pi n} - \frac{2h\sin(np)}{\pi pn^2} + \frac{2h\cos(np)}{n(\pi - p)} - \frac{2hp\cos(np)}{\pi n(\pi - p)} - \frac{2h\sin(np)}{\pi n^2(\pi - p)} \\
-  &= 2h\left( -\frac{\cos(np)}{\pi n} - \frac{\sin(np)}{\pi pn^2} + \frac{\cos(np)}{n(\pi - p)} - \frac{p\cos(np)}{\pi n(\pi - p)} - \frac{\sin(np)}{\pi n^2(\pi - p)} \right) \\
-  &= \frac{2h}{n}\left( -\frac{\cos(np)}{\pi} - \frac{\sin(np)}{\pi p n} + \frac{\cos(np)}{\pi - p} - \frac{p\cos(np)}{\pi(\pi - p)} - \frac{\sin(np)}{\pi n(\pi - p)} \right) \\
-\end{align*}
+<!-- ## Exercise C.1 -->
+
+<!-- Let $p \in (0, \pi), \ h \in \mathbb{R}$ and define -->
+<!-- \begin{align*} -->
+<!--   f(x) =  -->
+<!--   \begin{cases} -->
+<!--     \dfrac{hx}{p}, &x\in[0,p], \\[2ex] -->
+<!--     \dfrac{h(\pi - x)}{\pi - p}, &x\in(p, \pi]. -->
+<!--   \end{cases} -->
+<!-- \end{align*} -->
+<!-- Show that -->
+<!-- \begin{align*} -->
+<!--   f(x) = \sum_{n = 1}^\infty A_n \sin(nx), \quad x\in[o, \pi], -->
+<!-- \end{align*} -->
+<!-- where -->
+<!-- \begin{align*} -->
+<!--   A_n := \frac{2h}{n^2} \frac{\sin(np)}{p(\pi - p)}, \quad n \in \mathbb{N}. -->
+<!-- \end{align*} -->
+<!-- Convince yourself that $\sum_{n = 1}^\infty |A_n| < \infty$ such that one can utilize theorem C.8. -->
+<!-- \newline -->
+<!-- **Hint**: You can safe time by expanding $f$ as an uneven function on $[-\pi, \pi]$ and use remark C.4. -->
+<!-- \newline -->
+<!-- \textbf{Solution:} -->
+<!-- \newline -->
+<!-- The first thing to do is to expand $f$ as an uneven function. -->
+<!-- This is done as follows -->
+<!-- \begin{align*} -->
+<!--   \tilde{f}(x) = -->
+<!--   \begin{cases} -->
+<!--     f(x), &x\in[0, \pi] \\[2ex] -->
+<!--     -f(-x), &x\in[-\pi, 0). -->
+<!--   \end{cases} -->
+<!-- \end{align*} -->
+<!-- Remark C.4 now tells that because $\tilde{f}$ is uneven $a_n(\tilde{f}) = 0$ for all $n\in\mathbb{N}_0$ and -->
+<!-- \begin{align*} -->
+<!--   b_n(\tilde{f}) = \frac{2}{l} \int_0^l \sin(n \pi x/l)\tilde{f}(x)\text{d}x, \quad n \in \mathbb{N}. -->
+<!-- \end{align*} -->
+<!-- With our uneven expansion of $f$ our $b_n(\tilde{f})$ becomes -->
+<!-- \begin{align*} -->
+<!--   b_n(\tilde{f}) &= \frac{2}{\pi} \int_0^\pi \sin(n\pi x/\pi) \tilde{f}(x) \ \text{d}x \\ -->
+<!--   &= \frac{2}{\pi} \left( \int_0^p \sin(nx)\frac{hx}{p} \ \text{d}x + \int_p^\pi \sin(nx)\frac{h(\pi - x)}{\pi - p} \ \text{d}x \right) \\ -->
+<!--   &= \frac{2}{\pi} \left( \frac{h}{p} \int_0^p \sin(nx) x \ \text{d}x + \frac{h}{\pi - p} \int_p^\pi \sin(nx)(\pi - x) \ \text{d}x \right) \\ -->
+<!--   &= \frac{2}{\pi} \left( \frac{h}{p} \int_0^p \sin(nx) x \ \text{d}x + \frac{h\pi}{\pi - p} \int_p^\pi \sin(nx) \ \text{d}x - \frac{h}{\pi - p} \int_p^\pi \sin(nx)x \ \text{d}x \right). -->
+<!-- \end{align*} -->
+<!-- To compute the integrals in the above equation we use partial integration with -->
+<!-- \begin{align*} -->
+<!--   f(x) &= x, \qquad &&f'(x) = 1 \\ -->
+<!--   g(x) &= \sin(nx), \qquad &&G(x) = -\frac{\cos(nx)}{n}, -->
+<!-- \end{align*} -->
+<!-- and the familiar relation -->
+<!-- \begin{align*} -->
+<!--   \int_a^b f(x)g(x) = \left[ f(x)G(x) \right]_a^b + \int_a^b f'(x)G(x) \ \text{d}x. -->
+<!-- \end{align*} -->
+<!-- This means that the first integral becomes -->
+<!-- \begin{align*} -->
+<!--   \int_0^p\sin(nx) x \ \text{d}x &= \left[ -\frac{x\cos(nx)}{n} \right]_0^p - \frac{1}{n} \int_0^p \cos(nx) \ \text{d}x \\ -->
+<!--   &= \left[ -\frac{x\cos(nx)}{n} \right]_0^p - \frac{1}{n} \left[ \frac{\sin(nx)}{n} \right]_0^p \\ -->
+<!--   &= -\frac{p\cos(np)}{n} - \left( -\frac{0 \cdot \cos(n \cdot 0)}{n} \right) - \frac{1}{n}\left( \frac{\sin(np)}{n} - \frac{\sin(n \cdot 0)}{n} \right) \\ -->
+<!--   &= -\frac{p\cos(np)}{n} - \frac{\sin(np)}{n^2}. -->
+<!-- \end{align*} -->
+<!-- The second integral becomes -->
+<!-- \begin{align*} -->
+<!--   \int_p^\pi \sin(nx) \ \text{d}x &= \left[ -\frac{\cos(nx)}{n} \right]_p^\pi \\ -->
+<!--   &= -\frac{\cos(n \pi)}{n} - \left( -\frac{\cos(np)}{n} \right) \\ -->
+<!--   &= \frac{1}{n} + \frac{\cos(np)}{n}. -->
+<!-- \end{align*} -->
+<!-- Lastly the third integral becomes -->
+<!-- \begin{align*} -->
+<!--   \int_p^\pi \sin(nx) x \ \text{d}x &= \left[ -\frac{x\cos(nx)}{n} \right]_p^\pi - \frac{1}{n} \int_p^\pi \cos(nx) \ \text{d}x \\ -->
+<!--   &= \left[ -\frac{x\cos(nx)}{n} \right]_p^\pi - \frac{1}{n} \left[ \frac{\sin(nx)}{n} \right]_p^\pi \\ -->
+<!--   &= -\frac{\pi\cos(n \pi)}{n} - \left( -\frac{p\cos(np)}{n} \right) -  \frac{1}{n} \left( \frac{\sin(n\pi)}{n} - \frac{\sin(np)}{n} \right)\\ -->
+<!--   &= \frac{\pi}{n} + \frac{p\cos(np)}{n} + \frac{\sin(np)}{n^2}. -->
+<!-- \end{align*} -->
+<!-- Inserting the three integrals, which we have now solved, yields -->
+<!-- \begin{align*} -->
+<!--   b_n(\tilde{f}) &= \frac{2}{\pi} \left( \frac{h}{p} \int_0^p \sin(nx) x \ \text{d}x + \frac{h\pi}{\pi - p} \int_p^\pi \sin(nx) \ \text{d}x - \frac{h}{\pi - p} \int_p^\pi \sin(nx)x \ \text{d}x \right) \\ -->
+<!--   &= \frac{2}{\pi} \left( \frac{h}{p} \left( -\frac{p\cos(np)}{n} - \frac{\sin(np)}{n^2} \right) + \frac{h\pi}{\pi - p} \left( \frac{1}{n} + \frac{\cos(np)}{n} \right) - \frac{h}{\pi - p} \left( \frac{\pi}{n} + \frac{p\cos(np)}{n} + \frac{\sin(np)}{n^2} \right) \right) \\ -->
+<!--   &= \frac{2}{\pi} \left(-\frac{hp\cos(np)}{pn} - \frac{h\sin(np)}{pn^2} + \frac{h\pi\cos(np)}{n(\pi - p)} - \frac{hp\cos(np)}{n(\pi - p)} - \frac{h\sin(np)}{n^2(\pi - p)} \right) \\ -->
+<!--   &= -\frac{2hp\cos(np)}{\pi pn} - \frac{2h\sin(np)}{\pi pn^2} + \frac{2h\pi\cos(np)}{\pi n(\pi - p)} - \frac{2hp\cos(np)}{\pi n(\pi - p)} - \frac{2h\sin(np)}{\pi n^2(\pi - p)} \\ -->
+<!--   &= -\frac{2h\cos(np)}{\pi n} - \frac{2h\sin(np)}{\pi pn^2} + \frac{2h\cos(np)}{n(\pi - p)} - \frac{2hp\cos(np)}{\pi n(\pi - p)} - \frac{2h\sin(np)}{\pi n^2(\pi - p)} \\ -->
+<!--   &= 2h\left( -\frac{\cos(np)}{\pi n} - \frac{\sin(np)}{\pi pn^2} + \frac{\cos(np)}{n(\pi - p)} - \frac{p\cos(np)}{\pi n(\pi - p)} - \frac{\sin(np)}{\pi n^2(\pi - p)} \right) \\ -->
+<!--   &= \frac{2h}{n}\left( -\frac{\cos(np)}{\pi} - \frac{\sin(np)}{\pi p n} + \frac{\cos(np)}{\pi - p} - \frac{p\cos(np)}{\pi(\pi - p)} - \frac{\sin(np)}{\pi n(\pi - p)} \right) \\ -->
+<!-- \end{align*} -->

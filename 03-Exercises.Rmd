@@ -41,7 +41,9 @@ by the definiton of $A(x)$ the system becomes
   \varphi_2'(t) &= \varphi(t)_2, \quad \varphi_2(0) = x_2.
 \end{align*}
 By solving the system we get the following $\Phi(t,x)$ 
-$$\Phi(t,x) = \begin{bmatrix} \varphi_1(t,x) \\ \varphi_2(t,x) \end{bmatrix} = \begin{bmatrix} x_1e^t \\ x_2e^t \end{bmatrix}.$$
+\begin{align*}
+\Phi(t,x) = \begin{bmatrix} \varphi_1(t,x) \\ \varphi_2(t,x) \end{bmatrix} = \begin{bmatrix} x_1e^t \\ x_2e^t \end{bmatrix}.
+\end{align*}
 By Lemma 1.8 we have $X(t,q) = \Phi(t, \gamma(q))$, thus $$X(t,q) = \Phi(t,\gamma(q)) =  \begin{bmatrix} qe^t \\ q^2e^t \end{bmatrix}.$$
 As we seek values for $t$ and $q$ we can now invert the functions
 \begin{align*}
@@ -56,13 +58,15 @@ $$x_2 = \left(e^{-t}x_1\right)^2e^t
 = e^{-t}x_1^2 
 = \frac{1}{e^{t}} x_1^2,$$
 this in turn gives
-$$x_2 = \frac{1}{e^{t}} x_1^2
-\quad \Leftrightarrow \quad
+\begin{align*}
+x_2 = \frac{1}{e^{t}} x_1^2
+\quad &\Leftrightarrow \quad
 e^t = \frac{x_1^2}{x_2}\\
 \quad \Leftrightarrow \quad
 \log\left(e^t\right) = \log\left(\frac{x_1^2}{x_2}\right)
-\quad \Leftrightarrow \quad
-t = \log\left(x_1^2\right) - \log\left(x_2\right).$$
+\quad &\Leftrightarrow \quad
+t = \log\left(x_1^2\right) - \log\left(x_2\right).
+\end{align*}
 The expression we have now found for $t$ can be inserted into the expression for $x_1$ to get $q$
 $$q = x_1 e^{-\left(\log\left(x_1^2\right) - \log\left(x_2\right)\right)}
 = x_1 e^{\log\left(x_2\right)-\log\left(x_1^2\right)}
@@ -74,16 +78,18 @@ The theorem states that
 $$Z(t,q) = \phi(\gamma(q))e^{-\int_0^tb(X(s,q))ds} + \int_0^t e^{-\int_s^tb(X(r,q))dr}f(X(s,q))ds,$$
 with $\phi(\gamma(q))$ being $Z(0,q)$ i.e. the given initial value.
 Inserting what we now, especially that $f(x) = 0$, yields
-$$Z(\log\left(x_1^2\right) - \log\left(x_2\right),\frac{x_2}{x_1}) = 5 e^{-q^3\int_0^{\log\left(x_1^2\right) - \log\left(x_2\right)} e^{2s}ds} \\
-= 5 e^{-q^3 \left[\frac{1}{2}e^{2s}\right]_0^{\log\left(x_1^2\right) - \log\left(x_2\right)}} \\
-= 5 e^{-q^3 \frac{1}{2} 
+\begin{align*}
+Z(\log\left(x_1^2\right) - \log\left(x_2\right),\frac{x_2}{x_1}) &= 5 e^{-q^3\int_0^{\log\left(x_1^2\right) - \log\left(x_2\right)} e^{2s}ds} \\
+&= 5 e^{-q^3 \left[\frac{1}{2}e^{2s}\right]_0^{\log\left(x_1^2\right) - \log\left(x_2\right)}} \\
+&= 5 e^{-q^3 \frac{1}{2} 
 \left(e^{2\left(\log\left(x_1^2\right) - \log\left(x_2\right)\right)} - e^0\right)} \\
-= 5 e^{-q^3 \frac{1}{2} \left( e^{2\log\left(\frac{x_1^2}{x_2}\right)} - e^0\right)} \\
-= 5 e^{-q^3 \frac{1}{2} \left( e^{\log\left(\frac{x_1^4}{x_2^2}\right)} - e^0\right)} \\
-= 5 e^{-q^3 \frac{1}{2} \left( \frac{x_1^4}{x_2^2} - 1\right)} \\
-= 5 e^{-\frac{x_2^3}{x_1^3} \frac{1}{2} \left( \frac{x_1^4}{x_2^2} - 1\right)} \\
-= 5 e^{-\frac{1}{2} \left( \frac{x_1^4x_2^3}{x_1^3x_2^2} - \frac{x_2^3}{x_1^3}\right)} \\
-= 5 e^{-\left(x_1x_2 - x_2^3/x_1^3\right)/2}.$$
+&= 5 e^{-q^3 \frac{1}{2} \left( e^{2\log\left(\frac{x_1^2}{x_2}\right)} - e^0\right)} \\
+&= 5 e^{-q^3 \frac{1}{2} \left( e^{\log\left(\frac{x_1^4}{x_2^2}\right)} - e^0\right)} \\
+&= 5 e^{-q^3 \frac{1}{2} \left( \frac{x_1^4}{x_2^2} - 1\right)} \\
+&= 5 e^{-\frac{x_2^3}{x_1^3} \frac{1}{2} \left( \frac{x_1^4}{x_2^2} - 1\right)} \\
+&= 5 e^{-\frac{1}{2} \left( \frac{x_1^4x_2^3}{x_1^3x_2^2} - \frac{x_2^3}{x_1^3}\right)} \\
+&= 5 e^{-\left(x_1x_2 - x_2^3/x_1^3\right)/2}.
+\end{align*}
 Which in turns implies that
 $$u(x) = 5 e^{-\left(x_1x_2 - x_2^3/x_1^3\right)/2}, \quad x \in \Omega.$$
 
@@ -91,8 +97,10 @@ $$u(x) = 5 e^{-\left(x_1x_2 - x_2^3/x_1^3\right)/2}, \quad x \in \Omega.$$
 Let
 $$\Omega := \left\{ x \in \mathbb{R}^2 \ \Bigg| \ \ |x_1 - x_2| < \frac{\pi}{2} \right\}$$
 Calculate the solution for the Cauchy problem given by
-$$\frac{2}{1 + u(x)^2}\partial_1 u(x) + \frac{1}{1 + u(x)^2}\partial_2 u(x) = 1, \quad x \in \Omega \\
-u(q,q) = 0, \quad q \in \mathbb{R}.$$
+\begin{align*}
+\frac{2}{1 + u(x)^2}\partial_1 u(x) + \frac{1}{1 + u(x)^2}\partial_2 u(x) = 1, \quad x \in \Omega \\
+u(q,q) = 0, \quad q \in \mathbb{R}.
+\end{align*}
 
 **Solution**
 We start by rewriting to normal form
@@ -143,8 +151,10 @@ $$u(x) = Z(\Psi(x)) = \tan(x_1 - x_2).$$
 
 ### Exercise 3
 Solve the following initial-value-problem
-$$(\partial_t^2 - \partial_x^2)u(t,x) = 0, \quad t,x \in \mathbb{R} \\
-u(0,x) = \cos(x), \quad \partial_tu(0,x) = \cos^3(x), \quad x \in \mathbb{R}.$$
+\begin{align*}
+(\partial_t^2 - \partial_x^2)u(t,x) = 0, \quad t,x \in \mathbb{R} \\
+u(0,x) = \cos(x), \quad \partial_tu(0,x) = \cos^3(x), \quad x \in \mathbb{R}.
+\end{align*}
 *Hint*: $\cos^3(y) = \cos(y) - \sin^2(y)\cos(y)$
 
 **Solution**:
@@ -155,24 +165,30 @@ $$g(x) = \cos(x), \quad h(x) = \cos^3(x).$$
 D'Alamberts formula is given by
 $$u(t,x) = \frac{1}{2}\left\{g(x + t) - g(x - t)\right\} + \frac{1}{2}\int_{x-t}^{x+t}h(y)\text{d}y.$$
 We insert what we know and calculate
-$$u(t,x) = \frac{1}{2}\left\{\cos(x + t) - \cos(x - t)\right\} + \frac{1}{2}\int_{x-t}^{x+t}\cos^3(y)\text{d}y \\
-= \frac{1}{2}\left\{\cos(x + t) - \cos(x - t)\right\} + \frac{1}{2}\int_{x-t}^{x+t}\cos(y) - \sin^2(y)\cos(y)\text{d}y \\
-= \frac{1}{2}\left\{\cos(x + t) - \cos(x - t)\right\} + \frac{1}{2}\int_{x-t}^{x+t}\cos(y)\text{d}y - \frac{1}{2}\int_{x-t}^{x+t}\sin^2(y)\cos(y)\text{d}y \\
-= \frac{1}{2}\left\{\cos(x + t) - \cos(x - t)\right\} + \frac{1}{2}[\sin(y)]_{x-t}^{x+t} - \frac{1}{2}\int_{x-t}^{x+t}\sin^2(y)\cos(y)\text{d}y \\
-= \frac{1}{2}\left\{\cos(x + t) - \cos(x - t) + \sin(x + t) - \sin(x - t)\right\} - \frac{1}{2}\int_{x-t}^{x+t}\sin^2(y)\cos(y)\text{d}y,$$
+\begin{align*}
+u(t,x) &= \frac{1}{2}\left\{\cos(x + t) - \cos(x - t)\right\} + \frac{1}{2}\int_{x-t}^{x+t}\cos^3(y)\text{d}y \\
+&= \frac{1}{2}\left\{\cos(x + t) - \cos(x - t)\right\} + \frac{1}{2}\int_{x-t}^{x+t}\cos(y) - \sin^2(y)\cos(y)\text{d}y \\
+&= \frac{1}{2}\left\{\cos(x + t) - \cos(x - t)\right\} + \frac{1}{2}\int_{x-t}^{x+t}\cos(y)\text{d}y - \frac{1}{2}\int_{x-t}^{x+t}\sin^2(y)\cos(y)\text{d}y \\
+&= \frac{1}{2}\left\{\cos(x + t) - \cos(x - t)\right\} + \frac{1}{2}[\sin(y)]_{x-t}^{x+t} - \frac{1}{2}\int_{x-t}^{x+t}\sin^2(y)\cos(y)\text{d}y \\
+&= \frac{1}{2}\left\{\cos(x + t) - \cos(x - t) + \sin(x + t) - \sin(x - t)\right\} - \frac{1}{2}\int_{x-t}^{x+t}\sin^2(y)\cos(y)\text{d}y,
+\end{align*}
 what remains is to calculate the last antiderivative, which we will do below using substitution
 $$u = \sin(x), \quad \frac{\text{d}u}{\text{d}y} = \cos(y) \ \Leftrightarrow \ \text{d}u = \cos(y)\text{d}y.$$
 We can now insert this into the antiderivative remembering that we also need to substitute the bounds, i.e. applying the function $u$ on them
-$$\frac{1}{2}\int_{x-t}^{x+t}\sin^2(y)\cos(y)\text{d}y \ \Leftrightarrow \ \frac{1}{2}\int_{x-t}^{x+t}\sin^2(y)\cos(y)\text{d}y \\
-\Leftrightarrow \ \frac{1}{2}\int_{\sin(x-t)}^{\sin(x+t)}u^2\text{d}u \ \Leftrightarrow \ \frac{1}{6}[u^3]_{\sin(x-t)}^{\sin(x+t)} \ \Leftrightarrow \ \frac{1}{6}\left(\sin^3(x + t) - \sin^3(x - t)\right).$$
+\begin{align*}
+  \frac{1}{2}\int_{x-t}^{x+t}\sin^2(y)\cos(y)\text{d}y \ \Leftrightarrow \ \frac{1}{2}\int_{x-t}^{x+t}\sin^2(y)\cos(y)\text{d}y \\
+  \Leftrightarrow \ \frac{1}{2}\int_{\sin(x-t)}^{\sin(x+t)}u^2\text{d}u \ \Leftrightarrow \ \frac{1}{6}[u^3]_{\sin(x-t)}^{\sin(x+t)} \ \Leftrightarrow \ \frac{1}{6}\left(\sin^3(x + t) - \sin^3(x - t)\right).
+\end{align*}
 Inserting what we just found, we have expressed the solution explicitly as
 $$u(t,x) = \frac{1}{2}\left\{\cos(x + t) - \cos(x - t) + \sin(x + t) - \sin(x - t)\right\} - \frac{1}{6}\left(\sin^3(x + t) - \sin^3(x - t)\right).$$
 
 ### Exercise 4
 Solve the following intial-value/border-value-problem,
-$$\left(\partial_t - \frac{1}{2}\partial_x^2\right)u(t,x) = 0, \quad t>0, \ x \in (0,\pi); \\
+\begin{align*}
+\left(\partial_t - \frac{1}{2}\partial_x^2\right)u(t,x) = 0, \quad t>0, \ x \in (0,\pi); \\
 u(0,x) = 4 \sin(3x) \cos(3x), \quad x \in (0,\pi); \\
-u(t,0) = u(t,\pi) = 0, \quad t>0.$$
+u(t,0) = u(t,\pi) = 0, \quad t>0.
+\end{align*}
 *Hint*: $\sin(2y) = 2\sin(y)\cos(y), \ y \in \mathbb{R}.$
 
 **Solution**:

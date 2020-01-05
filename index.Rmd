@@ -2,7 +2,7 @@
 title: "Partial Differential Equation Notes"
 author: "Kasper Rosenkrands"
 date: "24.09.2019"
-output: bookdown::gitbook
+output: bookdown::pdf_book
 site: bookdown::bookdown_site
 ---
   
@@ -12,4 +12,5 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Introduction {-}
 
-This book will include notes and exercises from the Partial Differential Equations course at Aalborg University.
+This book will include notes and exercises as well as mock exams from the Partial Differential Equations course at Aalborg University.
+\newpage
