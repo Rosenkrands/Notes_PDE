@@ -285,7 +285,7 @@ Next we find $\Phi(t,x)$ as $\partial_t\Phi(t,x) = A(\Phi(t,x))$ yields the foll
   \varphi_1'(t) &= -\varphi_2(t), \quad &&\varphi_1(0) = x_1 \\
   \varphi_2'(t) &= \varphi_1(t), \quad &&\varphi_2(0) = x_2.
 \end{align*}
-This is a system of differential equations, which can be ezpressed in matrix notation as
+This is a system of differential equations, which can be expressed in matrix notation as
 \begin{align*}
   \begin{bmatrix} \varphi_1'(t) \\ \varphi_2'(t) \end{bmatrix} = \begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix}\begin{bmatrix} \varphi_1(t) \\ \varphi_2(t) \end{bmatrix}.
 \end{align*}
@@ -293,5 +293,15 @@ By Putzer's algorithm the solution is
 \begin{align*}
   \begin{bmatrix} \varphi_1(t) \\ \varphi_2(t) \end{bmatrix} &= e^{t\begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix}}\begin{bmatrix} x_1 \\ x_2 \end{bmatrix}\\
   &= \begin{bmatrix} \cos(t) & -\sin(t) \\ \sin(t) & \cos(t) \end{bmatrix}\begin{bmatrix} x_1 \\ x_2 \end{bmatrix}\\
-  &=
+  &=\begin{bmatrix} x_1\cos(t) -x_2\sin(t) \\ x_1\sin(t)  +x_2\cos(t) \end{bmatrix}
 \end{align*}
+By lemma 1.8
+$$X(t,q) = \begin{bmatrix} \cos(t) & -\sin(t) \\ \sin(t) & \cos(t) \end{bmatrix}\begin{bmatrix} 1 \\ q \end{bmatrix}$$
+and as the hint suggest the length of the legnth of this vector does not depend on $t$, so
+\begin{align*}
+  \sqrt{x_1^2 + x_2^2} &= \sqrt{1 + q^2} \\
+  x_1^2 + x_2^2 &= 1 + q^2 \\
+  q &= \sqrt{x_1^2 + x_2^2 - 1}.
+\end{align*}
+Thus as $Z(t,q) =  \cos(q)$ and $u(x) = Z(\psi(x))$ it implies that
+$$u(x) = \cos\left(\sqrt{x_1^2 + x_2^2 - 1}\right).$$
