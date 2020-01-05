@@ -3,7 +3,9 @@ output:
   pdf_document: default
   html_document: default
 ---
-# Exercise 1.4
+# Course Exercises
+
+## Exercise 1.4
 
 Linear PDE, rewrite to normal form
 \begin{align*}
@@ -46,7 +48,7 @@ By Theorem 1.9
 Not quite the answer but this is as close as i can get.
 
 
-# Exercise 1.8
+## Exercise 1.8
 The exercise is to solve the following Cauchy-problem
 \begin{align}
   u(x) \partial_1 u(x) + \partial_2 u(x) = 1, 
@@ -138,7 +140,7 @@ Multiplying both sides of \@ref(eq:texpression) by $2$ gives
   t &= 1 \pm\sqrt{2x_1 - 2x_2 + 1} (\#eq:psi1)
 \end{align}
 
-# Exercise 1.10
+## Exercise 1.10
 
 Find a solution for the Cauchy-problem
 \begin{align*}
