@@ -412,3 +412,17 @@ From corollary 3.13 the solution is given by
 \end{align*}
 The calculations follows as the integral of a density over $\mathbb{R}$ is equal to 1.
 
+### Exercise 6
+
+Let $u \ : \ \mathbb{R}^3 \rightarrow \mathbb{R}$ be given by
+$$u(x) := \left(x^2_1 - x_2^2\right)x_3 + 4x_1x_3 - x_2, \quad x \in \mathbb{R}^3.$$
+Determine the mean value of $u$ over a ball in $\mathbb{R}^3$ with radius 23876517 and center $(1,2,3)$.
+
+**Solution**:
+As u(x) is continuous it satisfies the mean value characteristic and therefore takes its mean value independet of the radius, by definition 5.4.
+\begin{align*}
+  u(1,2,3) &= (1^2- 2^2)3 + 4\cdot 1\cdot 3 - 2 \\
+  &= (1-4)3 + 12 - 2 \\
+  &= 3 - 12 + 12 - 2 \\
+  &= 1.
+\end{align*}
