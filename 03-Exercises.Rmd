@@ -305,3 +305,25 @@ and as the hint suggest the length of the legnth of this vector does not depend 
 \end{align*}
 Thus as $Z(t,q) =  \cos(q)$ and $u(x) = Z(\psi(x))$ it implies that
 $$u(x) = \cos\left(\sqrt{x_1^2 + x_2^2 - 1}\right).$$
+
+### Exercise 3
+solve the follwoing initial value problem
+\begin{align*}
+  \left( \partial_t^2 - \partial_x^2 \right)u(t,x) = \sin(x - t), \quad t,x \in \mathbb{R} \\
+  u(0,x) = \cos(x), \quad \partial_tu(0,x) = 0, \quad x \in \mathbb{R}.
+\end{align*}
+
+**Solution**:
+We are dealing with an initial value problem for a wave equation as deifned in definition 2.3.
+To solve the problem we look to Lemma 2.4.
+
+We need to first solve
+\begin{align*}
+  \left( \partial_t^2 - \partial_x^2 \right)v(t,x) = 0, \quad t,x \in \mathbb{R} \\
+  v(0,x) = \cos(x), \quad \partial_t v(0,x) = 0, \quad x\in \mathbb{R},
+\end{align*}
+this is done using (2.28), also known as d'Alamberts formula
+\begin{align*}
+  v(t,x) &= \frac{1}{2} \left\{\cos(x + t) + \cos(x-t)\right\} + \frac{1}{2} \int_{x-t}^{x+t} 0 \ \text{d}y \\
+  &= \frac{1}{2} \left\{\cos(x + t) + \cos(x-t)\right\}
+\end{align*}
