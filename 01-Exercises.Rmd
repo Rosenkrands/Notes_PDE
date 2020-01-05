@@ -170,5 +170,5 @@ We can now invert $t$ and $q$
 \end{align*}
 From theorem 1.16
 \begin{align*}
-  u(x) = Z(\psi(x)) = \frac{1}{\frac{1}{g(x_1 - x_2)} - x_2}
+  u(x) = Z(\psi(x)) = \frac{1}{\frac{1}{g(x_1 - x_2)} - x_2}.
 \end{align*}
