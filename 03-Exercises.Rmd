@@ -391,3 +391,13 @@ Inserting in the solution
   &= \frac{1}{2} + \frac{1}{4}e^{-98t} \cos(14x).
 \end{align*}
 The disappearance of the sum follows form remark C.4 on page 167.
+
+### Exercise 5
+
+Find a solution of the following initial-value-problem
+\begin{align*}
+  \left(\partial_t - \frac{1}{2}\partial_x^2\right)u(t,x) = t, \quad t>0, \ x \in \mathbb{R} \\
+  u(0,x) = 2 + 3x, \quad x \in \mathbb{R}.
+\end{align*}
+
+**Solution**:
