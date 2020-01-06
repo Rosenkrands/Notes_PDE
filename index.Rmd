@@ -15,4 +15,4 @@ knitr::opts_chunk$set(echo = TRUE)
 # Introduction {-}
 
 This book will include notes and exercises as well as mock exams from the Partial Differential Equations course at Aalborg University.
-The book might contain mistakes and typos(Rosenkrands).
+The book might contain mistakes and typos.
